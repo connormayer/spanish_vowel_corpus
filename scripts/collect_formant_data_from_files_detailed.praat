@@ -9,15 +9,15 @@
 
 form Analyze formant values from labeled segments in files
 	comment Directory of sound files
-	text sound_directory C:\Users\conno\Dropbox\ling\Dissertation\elicitation_data\kazakh\recordings\males\
+	text sound_directory C:\Users\conno\git_repos\spanish_vowel_corpus\audio\praat_test\
 	sentence Sound_file_extension .wav
 	comment Directory of TextGrid files
-	text textGrid_directory C:\Users\conno\Dropbox\ling\Dissertation\elicitation_data\kazakh\recordings\males\
+	text textGrid_directory C:\Users\conno\git_repos\spanish_vowel_corpus\audio\praat_test\
 	sentence TextGrid_file_extension .TextGrid
 	comment Full path of the resulting text file:
-	text resultfile C:\Users\conno\Dropbox\ling\Dissertation\elicitation_data\kazakh\kazakh_acoustic_results_detailed_males.csv
+	text resultfile C:\Users\conno\git_repos\spanish_vowel_corpus\audio\results.csv
 	comment Which tier has the vowels you want to analyze?
-	sentence Tier segments
+	sentence Tier vowels
 	comment Formant analysis parameters
 	positive Time_step 0.01
 	integer Maximum_number_of_formants 5
@@ -41,7 +41,7 @@ endif
 # Write a row with column titles to the result file:
 # (remember to edit this if you add or change the analyses!)
 
-titleline$ = "Filename,Gender,Vowel,Word,IsSuffix,F0,F1-10,F1-20,F1-30,F1-40,F1-50,F1-60,F1-70,F1-80,F2-10,F2-20,F2-30,F2-40,F2-50,F2-60,F2-70,F2-80,F3-10,F3-20,F3-30,F3-40,F3-50,F3-60,F3-70,F3-80,Duration'newline$'"
+titleline$ = "Filename,Subject,Gender,Vowel,Word,F0,F1-10,F1-20,F1-30,F1-40,F1-50,F1-60,F1-70,F1-80,F1-90,F2-10,F2-20,F2-30,F2-40,F2-50,F2-60,F2-70,F2-80,F2-90,F3-10,F3-20,F3-30,F3-40,F3-50,F3-60,F3-70,F3-80,F3-90,F4,Duration'newline$'"
 fileappend "'resultfile$'" 'titleline$'
 
 # Go through all the sound files, one by one:
@@ -52,10 +52,12 @@ for ifile to numberOfFiles
 	Read from file... 'sound_directory$''filename$'
 	# Starting from here, you can add everything that should be 
 	# repeated for every sound file that was opened:
+	# TODO
 	soundname$ = selected$ ("Sound", 1)
 	hyp = rindex(soundname$, "_")
 	strLen = length(soundname$)
 	gender$ = right$(soundname$, strLen - hyp)
+	subject$ = ""
 
 	To Formant (burg)... time_step maximum_number_of_formants maximum_formant window_length preemphasis_from
 
@@ -71,13 +73,7 @@ for ifile to numberOfFiles
 		# Pass through all intervals in the selected tier:
 		for interval to numberOfIntervals
 			label$ = Get label of interval... tier interval
-			if label$ <> "" and index_regex(label$, "[kgqs]") == 0
-				if startsWith(label$, "-")
-					label$ = right$(label$, length(label$) - 1)
-					suffixVowel = 1
-				else
-					suffixVowel = 0
-				endif
+			if label$ <> ""
 				# if the interval has an unempty label, get its start and end:
 				start = Get starting point... tier interval
 				end = Get end point... tier interval
@@ -95,6 +91,7 @@ for ifile to numberOfFiles
 				point60 = start + (end - start) * 0.6
 				point70 = start + (end - start) * 0.7
 				point80 = start + (end - start) * 0.8
+				point90 = start + (end - start) * 0.9
 
 				f1_10 = Get value at time... 1 point10 Hertz Linear
 				f1_20 = Get value at time... 1 point20 Hertz Linear
@@ -104,6 +101,7 @@ for ifile to numberOfFiles
 				f1_60 = Get value at time... 1 point60 Hertz Linear
 				f1_70 = Get value at time... 1 point70 Hertz Linear
 				f1_80 = Get value at time... 1 point80 Hertz Linear
+				f1_90 = Get value at time... 1 point90 Hertz Linear
 
 				f2_10 = Get value at time... 2 point10 Hertz Linear
 				f2_20 = Get value at time... 2 point20 Hertz Linear
@@ -113,6 +111,7 @@ for ifile to numberOfFiles
 				f2_60 = Get value at time... 2 point60 Hertz Linear
 				f2_70 = Get value at time... 2 point70 Hertz Linear
 				f2_80 = Get value at time... 2 point80 Hertz Linear
+				f2_90 = Get value at time... 2 point90 Hertz Linear
 
 				f3_10 = Get value at time... 3 point10 Hertz Linear
 				f3_20 = Get value at time... 3 point20 Hertz Linear
@@ -122,6 +121,9 @@ for ifile to numberOfFiles
 				f3_60 = Get value at time... 3 point60 Hertz Linear
 				f3_70 = Get value at time... 3 point70 Hertz Linear
 				f3_80 = Get value at time... 3 point80 Hertz Linear
+				f3_90 = Get value at time... 3 point90 Hertz Linear
+
+				f4 = Get value at time... 4 point50 Hertz Linear
 
 				# Get duration
 				duration = end - start
@@ -131,7 +133,7 @@ for ifile to numberOfFiles
 			    f0 = Get value at time... midpoint Hertz Linear
 
 				# Save result to text file:
-				resultline$ = "'soundname$','gender$','label$','word$','label$','f0','f1_10','f1_20','f1_30','f1_40','f1_50','f1_60','f1_70','f1_80','f2_10','f2_20','f2_30','f2_40','f2_50','f2_60','f2_70','f2_80','f3_10','f3_20','f3_30','f3_40','f3_50','f3_60','f3_70','f3_80','duration''newline$'"
+				resultline$ = "'soundname$','subject$','gender$','label$','word$','f0','f1_10','f1_20','f1_30','f1_40','f1_50','f1_60','f1_70','f1_80','f1_90','f2_10','f2_20','f2_30','f2_40','f2_50','f2_60','f2_70','f2_80','f2_90','f3_10','f3_20','f3_30','f3_40','f3_50','f3_60','f3_70','f3_80','f3_90','f4','duration''newline$'"
 				fileappend "'resultfile$'" 'resultline$'
 				select TextGrid 'soundname$'
 			endif
