@@ -8,7 +8,7 @@ size = 2
 item []: 
     item [1]:
         class = "IntervalTier" 
-        name = "Words" 
+        name = "words" 
         xmin = 0 
         xmax = 421.435646 
         intervals: size = 103 
@@ -426,7 +426,7 @@ item []:
             text = "" 
     item [2]:
         class = "IntervalTier" 
-        name = "Vowels" 
+        name = "vowels" 
         xmin = 0 
         xmax = 421.435646 
         intervals: size = 103 

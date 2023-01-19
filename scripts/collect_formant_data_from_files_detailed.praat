@@ -9,10 +9,10 @@
 
 form Analyze formant values from labeled segments in files
 	comment Directory of sound files
-	text sound_directory C:\Users\conno\git_repos\spanish_vowel_corpus\audio\praat_test\
+	text sound_directory C:\Users\conno\git_repos\spanish_vowel_corpus\audio\word_segmented\
 	sentence Sound_file_extension .wav
 	comment Directory of TextGrid files
-	text textGrid_directory C:\Users\conno\git_repos\spanish_vowel_corpus\audio\praat_test\
+	text textGrid_directory C:\Users\conno\git_repos\spanish_vowel_corpus\audio\word_segmented\
 	sentence TextGrid_file_extension .TextGrid
 	comment Full path of the resulting text file:
 	text resultfile C:\Users\conno\git_repos\spanish_vowel_corpus\audio\results.csv
@@ -52,12 +52,10 @@ for ifile to numberOfFiles
 	Read from file... 'sound_directory$''filename$'
 	# Starting from here, you can add everything that should be 
 	# repeated for every sound file that was opened:
-	# TODO
 	soundname$ = selected$ ("Sound", 1)
-	hyp = rindex(soundname$, "_")
-	strLen = length(soundname$)
-	gender$ = right$(soundname$, strLen - hyp)
-	subject$ = ""
+	hyp = index(soundname$, "_")
+	subject$ = left$(soundname$, hyp - 1)
+	gender$ = mid$(soundname$, hyp + 1, 1)
 
 	To Formant (burg)... time_step maximum_number_of_formants maximum_formant window_length preemphasis_from
 
