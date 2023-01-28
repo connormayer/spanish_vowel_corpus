@@ -108,8 +108,8 @@ task_full <- task_full %>%
 # mislabeled_row$gender <- 'f'
 # mislabeled_row$correct <- mislabeled_row$response == 'o'
 
-task_full <- task_full %>%
-  rows_update(mislabeled_row, by = c("ID", "filename"))
+# task_full <- task_full %>%
+#   rows_update(mislabeled_row, by = c("ID", "filename"))
 
 # Create some plots
 
@@ -149,3 +149,11 @@ task_full %>%
 ggplot(aes(x=correct)) + 
   geom_histogram()
 ggsave('figures/token_histogram.png')
+
+# create confusion matrix
+
+task_full %>%
+  group_by(vowel, response) %>%
+  count() %>%
+  pivot_wider(names_from=response, values_from=n) %>%
+  write_csv('../confusion_matrix.csv')
