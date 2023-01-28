@@ -41,7 +41,7 @@ endif
 # Write a row with column titles to the result file:
 # (remember to edit this if you add or change the analyses!)
 
-titleline$ = "Filename,Subject,Gender,Vowel,Word,F0,F1-10,F1-20,F1-30,F1-40,F1-50,F1-60,F1-70,F1-80,F1-90,F2-10,F2-20,F2-30,F2-40,F2-50,F2-60,F2-70,F2-80,F2-90,F3-10,F3-20,F3-30,F3-40,F3-50,F3-60,F3-70,F3-80,F3-90,F4,Duration'newline$'"
+titleline$ = "Filename,Subject,Gender,Vowel,Word,F0,F1_10,F1_20,F1_30,F1_40,F1_50,F1_60,F1_70,F1_80,F1_90,F2_10,F2_20,F2_30,F2_40,F2_50,F2_60,F2_70,F2_80,F2_90,F3_10,F3_20,F3_30,F3_40,F3_50,F3_60,F3_70,F3_80,F3_90,F4,Duration'newline$'"
 fileappend "'resultfile$'" 'titleline$'
 
 # Go through all the sound files, one by one:

@@ -2,8 +2,7 @@ library(lme4)
 library(tidyverse)
 
 # Read in experimental results
-#setwd("C:/Users/conno/git_repos/spanish_vowel_corpus/perception_study/full_experiment")
-setwd("E:/git_repos/spanish_vowel_corpus/perception_study/full_experiment")
+setwd("C:/Users/conno/git_repos/spanish_vowel_corpus/perception_study/full_experiment")
 
 #Read read in the filenames of all files from the naming task
 filenames <- list.files("data")
@@ -57,20 +56,17 @@ task <- task %>%
 # missing variables with NA.
 task_responses <- task %>%
   filter(zone == "response_button_text")
-# 
-# task_trials <- task %>%
-#   filter(zone == "fixation")
-# 
-# task_responses <- task_responses %>%
-#   select(ID, response, RT, trial, block, correct, filename)
-# 
-# task_trials <- task_trials %>%
-#   select(ID, vowel, word, group, block, subject, gender, trial, filename)
-# 
-# task_full <- full_join(task_responses, task_trials, by=c("ID", "trial", "block", "filename"))
 
-task_full <- task_responses %>%
-  select(ID, response, RT, trial, block, correct, filename, vowel, word, group, subject, gender)
+task_trials <- task %>%
+  filter(zone == "fixation")
+
+task_responses <- task_responses %>%
+  select(ID, response, RT, trial, block, correct, filename)
+
+task_trials <- task_trials %>%
+  select(ID, vowel, word, group, block, subject, gender, trial, filename)
+
+task_full <- full_join(task_responses, task_trials, by=c("ID", "trial", "block", "filename"))
 
 #Tidy up a few labeling errors in spreadsheet
 task_full <- task_full %>%
@@ -78,35 +74,13 @@ task_full <- task_full %>%
   mutate(vowel = ifelse(vowel == 'oo', 'o', vowel)) %>%
   mutate(vowel = ifelse(vowel == 'io', 'i', vowel))
 
-# mislabeled_row <- task_full %>% filter(filename == 'a_subj2_f_vara_85.wav' & block == 'quiet')
-# mislabeled_row$vowel <- 'a'
-# mislabeled_row$word <- 'vara'
-# mislabeled_row$group <- '9-A'
-# mislabeled_row$subject <- 'subj2'
-# mislabeled_row$gender <- 'f'
-# mislabeled_row$correct <- mislabeled_row$response == 'a'
-# 
-# task_full <- task_full %>%
-#   rows_update(mislabeled_row, by = c("ID", "filename"))
-# 
-# mislabeled_row <- task_full %>% filter(filename == 'o_subj48_f_toco_162.wav' & block == 'noise')
-# mislabeled_row$vowel <- 'o'
-# mislabeled_row$word <- 'toco'
-# mislabeled_row$group <- '7-A' 
-# mislabeled_row$subject <- 'subj48'
-# mislabeled_row$gender <- 'f'
-# mislabeled_row$correct <- mislabeled_row$response == 'o'
-# 
-# task_full <- task_full %>%
-#   rows_update(mislabeled_row, by = c("ID", "filename"))
-# 
-# mislabeled_row <- task_full %>% filter(filename == 'o_subj7_f_voto_241.wav' & block == 'noise')
-# mislabeled_row$vowel <- 'o'
-# mislabeled_row$word <- 'voto'
-# mislabeled_row$group <- '7-A'
-# mislabeled_row$subject <- 'subj7'
-# mislabeled_row$gender <- 'f'
-# mislabeled_row$correct <- mislabeled_row$response == 'o'
+mislabeled_row <- task_full %>% filter(filename == 'a_subj2_f_vara_85.wav' & block == 'quiet')
+mislabeled_row$vowel <- 'a'
+mislabeled_row$word <- 'vara'
+mislabeled_row$group <- '9-A'
+mislabeled_row$subject <- 'subj2'
+mislabeled_row$gender <- 'f'
+mislabeled_row$correct <- mislabeled_row$response == 'a'
 
 task_full <- task_full %>%
   rows_update(mislabeled_row, by = c("ID", "filename"))
@@ -138,7 +112,7 @@ task_full %>%
 ggplot(aes(vowel, response, fill=count)) +
   geom_tile() +
   geom_text(aes(label=count)) +
-  scale_fill_gradient(trans='log2', breaks=c(0, 2, 8, 32, 128, 512), low="green", high="red") +
+  scale_fill_gradient(trans='log2', breaks=c(0, 2, 8, 32, 128, 512)) +
   facet_grid(~ block)
 ggsave('figures/confusion_matrix.png')
 
