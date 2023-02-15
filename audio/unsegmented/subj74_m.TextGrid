@@ -673,7 +673,7 @@ item []:
         intervals [3]:
             xmin = 19.845282554831293 
             xmax = 22.81407245404518 
-            text = "saqu" 
+            text = "" 
         intervals [4]:
             xmin = 22.81407245404518 
             xmax = 22.91475303133619 

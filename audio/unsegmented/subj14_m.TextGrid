@@ -1137,7 +1137,7 @@ item []:
         intervals [121]:
             xmin = 259.5381653975313 
             xmax = 262.9347381861728 
-            text = "vata" 
+            text = "" 
         intervals [122]:
             xmin = 262.9347381861728 
             xmax = 263.0481705591783 
