@@ -2,8 +2,8 @@ library(lme4)
 library(tidyverse)
 
 # Read in experimental results
-#setwd("C:/Users/conno/git_repos/spanish_vowel_corpus/perception_study/full_experiment")
-setwd("E:/git_repos/spanish_vowel_corpus/perception_study/full_experiment")
+setwd("C:/Users/conno/git_repos/spanish_vowel_corpus/perception_study/full_experiment")
+#setwd("E:/git_repos/spanish_vowel_corpus/perception_study/full_experiment")
 
 #Read read in the filenames of all files from the naming task
 filenames <- list.files("data")
@@ -138,7 +138,7 @@ task_full %>%
 ggplot(aes(vowel, response, fill=count)) +
   geom_tile() +
   geom_text(aes(label=count)) +
-  scale_fill_gradient(trans='log2', breaks=c(0, 2, 8, 32, 128, 512), low="green", high="red") +
+  scale_fill_gradient(trans='log', breaks=c(0, 2, 8, 32, 128, 512), low="white", high="darkblue") +
   facet_grid(~ block)
 ggsave('figures/confusion_matrix.png')
 
