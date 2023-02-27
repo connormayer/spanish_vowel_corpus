@@ -33,21 +33,22 @@ df_50_norm<-df_50 %>%
   group_by(Subject, Vowel) %>% #calculations are based on the summaries of the 
                                #vowels per speaker
   mutate(across(2:(ncol(df_50) - 2), #replace the data in columns (minus group)
-                ~ c(scale(.)))) #take the entry in each column and feed into
+                ~ c(scale(.)), .names = "Z_{col}")) #take the entry in each column and feed into
                                 #scale function, then output a list value, and 
                                 #NOT A MATRIX!
 
 z_score<-2.5 #value for outlier detection, can raise/lower as needed
 
 Pitch_Outliers<-df_50_norm %>%
-  filter(abs(F0)>=z_score) %>% #pick up rows with abnormal z-score
-  select(Filename, Subject, Vowel, F0) %>% #save only categorical & F0 column
+  filter(abs(Z_F0)>=z_score) %>% #pick up rows with abnormal z-score
+  select(Filename, Subject, Vowel, F0, Z_F0) %>% #save only categorical & F0 column
   write_csv("Pitch_Outliers.csv") #and all data in a CSV file
 
 Formant_Outliers<-df_50_norm%>%
-  filter(if_any(F1_50:F4, ~ abs(.) >= z_score)) %>% 
+  filter(if_any(Z_F1_50:Z_F4, ~ abs(.) >= z_score)) %>% 
     #pick up rows where any of the Formant values are abnormal
-  select(!c(F0, Duration)) %>% #keep every column but Pitch & Duration
+  select("Filename", "Subject", "Vowel", "F1_50","Z_F1_50",
+         "F2_50", "Z_F2_50", "F3_50", "Z_F3_50", "F4", "Z_F4") %>% #keep every column but Pitch & Duration
   write_csv("Formant_Outliers.csv")
 
 Duration_Outliers<-df_50_norm %>%
