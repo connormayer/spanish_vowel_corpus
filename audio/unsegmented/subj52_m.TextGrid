@@ -238,10 +238,10 @@ item []:
             text = "cosa" 
         intervals [57]:
             xmin = 136.56745602847326 
-            xmax = 139.40474998705471 
+            xmax = 139.45030346353616 
             text = "" 
         intervals [58]:
-            xmin = 139.40474998705471 
+            xmin = 139.45030346353616 
             xmax = 139.84820375463232 
             text = "quito" 
         intervals [59]:
@@ -893,7 +893,7 @@ item []:
         intervals [58]:
             xmin = 139.54082543775826 
             xmax = 139.6207103023006 
-            text = "ui" 
+            text = "i" 
         intervals [59]:
             xmin = 139.6207103023006 
             xmax = 142.98552485570684 
