@@ -25,11 +25,13 @@ NA_Values<-df_50 %>% #using our refined data set
                                            #a NA value in any column 4 & on
   write_csv("NA_Values.csv") #then save these rows in a csv
 
+df_50_dropped<-df_50 %>%
+  anti_join(NA_Values, by='Filename')%>%
+  filter(Vowel %in% c("a", "e", "i", "o", "u")) %>%
+  write_csv("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/data/results_modified.csv")
 
 ##PART II B: Normalization
-df_50_norm<-df_50 %>%
-  drop_na(4:ncol(df_50)) %>% #remove any NA-valued row, 
-                             #since examining separately
+df_50_norm<-df_50_dropped %>% #since examining separately
   group_by(Subject, Vowel) %>% #calculations are based on the summaries of the 
                                #vowels per speaker
   mutate(across(2:(ncol(df_50) - 2), #replace the data in columns (minus group)
