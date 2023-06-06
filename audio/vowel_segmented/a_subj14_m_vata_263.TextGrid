@@ -25,7 +25,7 @@ item []:
         intervals [1]:
             xmin = 0 
             xmax = 0.12246577174011009 
-            text = "vata" 
+            text = "a" 
         intervals [2]:
             xmin = 0.12246577174011009 
             xmax = 0.23589814474559034 
