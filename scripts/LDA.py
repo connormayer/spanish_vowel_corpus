@@ -14,142 +14,177 @@ from sklearn.model_selection import GridSearchCV
 
 
 os.chdir("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/data")
-df=pd.read_csv("results_modified.csv")
+df = pd.read_csv("results_modified.csv")
 
 
 
 ##import data for model
-X_Values=df.drop(["Filename", "Subject", "Vowel"], 1)
-    #use acoustic measurements only
-Y_Values=df["Vowel"]
+x_values = df.drop(["Filename", "Subject", "Vowel"], 1)
+    # Drop data that isn't acoustic measurements.
+
+y_values = df["Vowel"]
 
 
 
 ##Visualizations for Normality
-Titles=list(X_Values.columns)
-    #create list for plot titles from pd df column names
+titles = list(x_values.columns)
+    # Create list from pd df column names to use as plot titles.
 
 #Histogram
-FigureH, AxesH = plt.subplots(2, 3, figsize=(10,6))
-    #initialize the figure & subplots for histogram
-    #six independent variables - 2 rows 3 columns
+figure_hist, axes_hist  =  plt.subplots(2, 3, figsize = (10,6))
+    # Initialize the figure & subplots for histogram with six independent
+    # variables - 2 rows 3 columns.
 
-for i in range(2): #iterate over rows
-    for j in range(3): #iterate over columns
-        k = 3*i+j
-            #iterate through the dataframe/list, each row contains three cols
-            # so after each row, 3 indices further into iterable
-        plt.hist(X_Values.iloc[:,k]) #create histogram
-        plt.sca(ax = AxesH[i,j]) #place in subplot
-        AxesH[i,j].set_title(Titles[k]) #corresponding title since col names
-FigureH.suptitle('Histogram', fontsize=16, fontweight='bold') #title fig
+#for row in range(2):
+    for col in range(3):
+        k  =  3*row+col
+            # Iterate through the dataframe/list, each row contains three cols
+            # so after each row, 3 indices further into iterable.
+        plt.hist(x_values.iloc[:,k]) # Create histogram
+        plt.sca(ax  =  axes_hist[row,col]) # Place in subplot
+        axes_hist[row,col].set_title(titles[k])
+
+figure_hist.suptitle('Histogram', fontsize = 16, fontweight = 'bold') # Title fig
 plt.tight_layout()
 
 #QQ plots; same process as above
-FigureQQ, AxesQQ = plt.subplots(2, 3, figsize=(10,6))
+figure_qq, axes_qq  =  plt.subplots(2, 3, figsize = (10,6))
 
-for i in range(2):
-    for j in range(3):
-        k = 3*i+j
-        sm.qqplot(X_Values.iloc[:,k], ax = AxesQQ[i,j])
-            #qqplot has subplot axes included in command
-        AxesQQ[i,j].set_title(Titles[k])
+for row in range(2):
+    for col in range(3):
+        k  =  3*row+col
+        sm.qqplot(x_values.iloc[:,k], ax  =  axes_qq[row,col])
+            # qqplot has subplot axes included in command.
+        axes_qq[row,col].set_title(titles[k])
 
-FigureQQ.suptitle('QQ Plots', fontsize=16, fontweight='bold')
+figure_qq.suptitle('QQ Plots', fontsize = 16, fontweight = 'bold')
 plt.tight_layout()
 
-#plt.show() #display all plots 
-
+plt.show()
 
 
 ##Model Training
-kFold=RepeatedStratifiedKFold(n_splits=10, #num of k-folds
-                           n_repeats=10) #num of repeats of 10-folds
-    #define evaluation method (type of cross validation)
+k_fold = RepeatedStratifiedKFold(n_splits = 10, # num of k-folds
+                               n_repeats = 10 # num of repeats of 10-folds
+                               ) 
+    # Define evaluation method (type of cross validation) for model.
 
-Model=[LinearDiscriminantAnalysis(),
-       QuadraticDiscriminantAnalysis()] #define model types
+model = [LinearDiscriminantAnalysis(),
+       QuadraticDiscriminantAnalysis()
+       ]
+    # Define model types
 
 
-for i in Model:
-    Scores=cross_val_score(i, #model
-                       X_Values, 
-                       Y_Values,
-                       cv=kFold, #cross validation splitting strategy
-                       n_jobs=-1) #jobs use all processors
+for model_type in model:
+    Scores = cross_val_score(model_type,
+                             x_values,
+                             y_values,
+                             cv = k_fold, # Cross validation splitting strategy
+                             n_jobs = -1 # Jobs use all processors
+                             )
     print('mean accuracy of %.3f with standard %s model'
-          % (np.mean(Scores), str(i))) #summarize result from model
-breakpoint()
+          % (np.mean(Scores), str(model_type))
+          )
+    # Summarize result from model.
 
-QDA=QuadraticDiscriminantAnalysis()
-QDA.fit(X_Values, Y_Values)
-    #train the model to implement it
+qda = QuadraticDiscriminantAnalysis()
+qda.fit(x_values, y_values)
 
 
+##D Prime Function
+def d_prime(pair):
+    # Takes as input a two-column dataframe of vowel pairs
+    # and returns the d prime score for those pairs
 
-##D Prime
-Y_Predict=QDA.predict(X_Values)
-    #use the model to predict classes, for use in dPrime calculation
+    m=len(pair)
 
-Vowel_Class=pd.DataFrame({'Predicted':Y_Predict,
-                          'Actual':Y_Values})
-    #create datafram with class labels only
+    total_differents=0 #values used in dPrime
+    total_sames=0
 
-Vowel_List=Y_Values.unique().tolist()
-    #creat list of vowels for use in pairwise calculations
-
-n=len(Vowel_List)
-pairs=[]
-
-for i in range(n): 
-    for j in range(i+1,n): #pair each vowel with the ones below
-        pairs.append([Vowel_List[i],Vowel_List[j]])
-            #generate list of pairs
-
-Vowel_Class_Pairs=[Vowel_Class[Vowel_Class["Actual"].isin(list)]
-                   for list in pairs] #create list of dfs with each pair
-
-p=len(Vowel_Class_Pairs)
-dPrime=np.zeros(p)
-    #initialize storage of dPrime values, on efor each pair
-
-for k in range(p):
-    Current_Pair=Vowel_Class_Pairs[k] #iterate through the pairs
-    m=len(Current_Pair)
-
-    Total_Differents=0 #values used in dPrime
-    Total_Sames=0
-
-    Hits=0
-    Alarms=0 
+    hits=0
+    alarms=0 
     
     for i in range(m): 
         for j in range(i+1,m): #compare each entry to the ones below
-            if Current_Pair.iloc[i,0]!=Current_Pair.iloc[j,0]:
+            if pair.iloc[i,0] != pair.iloc[j,0]:
                     #given different vowels
-                if Current_Pair.iloc[i,1]!=Current_Pair.iloc[j,1]:
+                if pair.iloc[i,1] != pair.iloc[j,1]:
                     #does the model recognize the difference
-                    Hits+= 1
-                Total_Differents+=1
+                    hits += 1
+                total_differents +=1
                 #regardless, count total different pairwise comparisons
             else:
                 #the vowels are the same
-                if Current_Pair.iloc[i,1]!=Current_Pair.iloc[j,1]:
+                if pair.iloc[i,1] != pair.iloc[j,1]:
                     #does the model assume they are different
-                    Alarms+= 1
-                Total_Sames+=1
+                    alarms += 1
+                total_sames +=1
                 #regardless, count total same pairwise comparisons
-    dPrime[k]=stats.norm.ppf(Hits/Total_Differents)-stats.norm.ppf(Alarms/Total_Sames)
+    return stats.norm.ppf(hits/total_differents)-stats.norm.ppf(alarms/total_sames)
     #calculate the dPrime Value and store
 
-for i in range(p):
-    print('The dPrime value of %s is %.3f'
-          % (str(pair[i]), dPrime[i])) #summarize results
 
 
 
 
 
+y_predict = qda.predict(x_values)
+
+vowel_class = pd.DataFrame({'Predicted': y_predict,
+                          'Actual': y_values}
+                           )
+
+vowel_list = y_values.unique().tolist()
+    # Create list of vowels for use in pairwise calculations.
+
+n = len(vowel_list)
+pairs = []
+
+
+for i in range(n): 
+    for j in range(i+1,n):
+        pairs.append(
+            [vowel_list[i],vowel_list[j]]
+            )
+
+
+vowel_class_pairs = [vowel_class[vowel_class["Actual"].isin(list)]
+                   for list in pairs] # Create list of dfs with each pair
+
+p = len(vowel_class_pairs)
+
+d_prime_values=[d_prime(vowel_class_pairs[k]) for k in range(p)]
+
+pd.DataFrame(
+    {'Vowels': pairs, 'Values': d_prime_values}
+    ).to_csv(
+        'dprime.csv', index=False)
+
+
+##Different Models
+
+x_values_fifty = x_values[['F1_50','F2_50','F3_50']]
+
+qda_fifty = QuadraticDiscriminantAnalysis()
+qda_fifty.fit(x_values_fifty, y_values)
+qda_fifty.score(x_values_fifty, y_values)
+
+y_predict_fifty = qda_fifty.predict(x_values_fifty)
+
+vowel_class_fifty = pd.DataFrame({'Predicted': y_predict_fifty,
+                          'Actual': y_values}
+                           )
+
+vowel_class_pairs_fifty = [vowel_class_fifty[vowel_class_fifty["Actual"].isin(list)]
+                   for list in pairs] # Create list of dfs with each pair
+
+d_prime_values_fifty=[d_prime(vowel_class_pairs_fifty[k]) for k in range(p)]
+
+
+pd.DataFrame(
+    {'Vowels': pairs, 'Values': d_prime_values_fifty}
+    ).to_csv(
+        'dprime_fifty.csv', index=False)
 
 
 
