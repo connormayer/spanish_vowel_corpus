@@ -147,7 +147,7 @@ item []:
         intervals [34]:
             xmin = 109.56271554464708 
             xmax = 110.13677755132044 
-            text = "sako" 
+            text = "saco" 
         intervals [35]:
             xmin = 110.13677755132044 
             xmax = 112.90693028345976 
@@ -155,7 +155,7 @@ item []:
         intervals [36]:
             xmin = 112.90693028345976 
             xmax = 113.4507785003082 
-            text = "maso" 
+            text = "baso" 
         intervals [37]:
             xmin = 113.4507785003082 
             xmax = 116.51398097386985 
@@ -275,7 +275,7 @@ item []:
         intervals [66]:
             xmin = 205.27059259860172 
             xmax = 205.80894739911838 
-            text = "bisa" 
+            text = "pisa" 
         intervals [67]:
             xmin = 205.80894739911838 
             xmax = 213.1814959941593 

@@ -67,7 +67,7 @@ item []:
         intervals [14]:
             xmin = 36.81563041382913 
             xmax = 37.431830201922395 
-            text = "bato" 
+            text = "vato" 
         intervals [15]:
             xmin = 37.431830201922395 
             xmax = 39.55367643335447 
@@ -179,7 +179,7 @@ item []:
         intervals [42]:
             xmin = 76.19958028304944 
             xmax = 76.66250373996391 
-            text = "vaso" 
+            text = "baso" 
         intervals [43]:
             xmin = 76.66250373996391 
             xmax = 79.1662633737674 
@@ -299,7 +299,7 @@ item []:
         intervals [72]:
             xmin = 117.10875280206056 
             xmax = 117.63960539087378 
-            text = "piso" 
+            text = "viso" 
         intervals [73]:
             xmin = 117.63960539087378 
             xmax = 120.974282515993 
@@ -347,7 +347,7 @@ item []:
         intervals [84]:
             xmin = 133.63546684412992 
             xmax = 134.20432116552843 
-            text = "piso" 
+            text = "viso" 
         intervals [85]:
             xmin = 134.20432116552843 
             xmax = 136.2254307038914 
@@ -387,7 +387,7 @@ item []:
         intervals [94]:
             xmin = 146.96747817017928 
             xmax = 147.59646807735038 
-            text = "vaso" 
+            text = "baso" 
         intervals [95]:
             xmin = 147.59646807735038 
             xmax = 149.64660028361678 
@@ -395,7 +395,7 @@ item []:
         intervals [96]:
             xmin = 149.64660028361678 
             xmax = 150.28740152227815 
-            text = "bato" 
+            text = "vato" 
         intervals [97]:
             xmin = 150.28740152227815 
             xmax = 153.06929877325115 
@@ -611,7 +611,7 @@ item []:
         intervals [150]:
             xmin = 225.0500358990665 
             xmax = 225.53519081314968 
-            text = "vote" 
+            text = "bote" 
         intervals [151]:
             xmin = 225.53519081314968 
             xmax = 227.8731618995742 

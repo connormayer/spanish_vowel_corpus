@@ -150,7 +150,8 @@ if __name__ == '__main__':
     dp_results = []
     for select in vowel_class_pairs:
         with concurrent.futures.ProcessPoolExecutor() as executor: # Parallelize
-            dp_results += [list(executor.map(d_prime, select))] #concat list of dPrime scores
+            dp_results += [list(executor.map(d_prime, select))]
+                # Concat list of dPrime scores
 
 
     seperator = ','
@@ -161,18 +162,21 @@ if __name__ == '__main__':
     print("generating results CSV...")
 
     results_list = []
+
     for i in range(n):
         curr_df = pd.DataFrame({'Model':[models_names[i] for _ in range(p)],
                               'Accuracy': [models_scores[i] for _ in range(p)],
                               'Vowels': pairs_list,
                               'dPrime': dp_results[i]})
         results_list += [curr_df]
+        # Create DataFrame with dprime scores and model info
 
 
     results_all = pd.concat(results_list,
                             axis=0,
                             ignore_index=True
                             ).to_csv('dprime.csv', index=False)
+        # Export CSV
     
     print("results complete")
     

@@ -107,7 +107,7 @@ item []:
         intervals [24]:
             xmin = 83.43587609426226 
             xmax = 84.10840040000238 
-            text = "bato" 
+            text = "vato" 
         intervals [25]:
             xmin = 84.10840040000238 
             xmax = 86.81903884307211 
@@ -363,7 +363,7 @@ item []:
         intervals [88]:
             xmin = 187.35217415877656 
             xmax = 188.09328675077558 
-            text = "beto" 
+            text = "veto" 
         intervals [89]:
             xmin = 188.09328675077558 
             xmax = 190.4239944118692 
@@ -427,7 +427,7 @@ item []:
         intervals [104]:
             xmin = 213.05830225855132 
             xmax = 213.89510133763036 
-            text = "bato" 
+            text = "vato" 
         intervals [105]:
             xmin = 213.89510133763036 
             xmax = 216.62249351594127 

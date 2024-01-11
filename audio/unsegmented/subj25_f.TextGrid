@@ -147,7 +147,7 @@ item []:
         intervals [34]:
             xmin = 106.94071035397549 
             xmax = 107.69762998348696 
-            text = "vaso" 
+            text = "baso" 
         intervals [35]:
             xmin = 107.69762998348696 
             xmax = 109.94097931657134 
@@ -238,10 +238,10 @@ item []:
             text = "cuco" 
         intervals [57]:
             xmin = 144.24927127992336 
-            xmax = 146.42462463639043 
+            xmax = 146.68709165013348 
             text = "" 
         intervals [58]:
-            xmin = 146.42462463639043 
+            xmin = 146.68709165013348 
             xmax = 147.27057603201908 
             text = "seque" 
         intervals [59]:
@@ -259,7 +259,7 @@ item []:
         intervals [62]:
             xmin = 152.57090905678896 
             xmax = 153.3310592296568 
-            text = "vata" 
+            text = "bata" 
         intervals [63]:
             xmin = 153.3310592296568 
             xmax = 155.48027646190016 
@@ -515,7 +515,7 @@ item []:
         intervals [126]:
             xmin = 250.24543554233964 
             xmax = 250.99681647347774 
-            text = "vate" 
+            text = "bate" 
         intervals [127]:
             xmin = 250.99681647347774 
             xmax = 252.82509885862783 
@@ -571,7 +571,7 @@ item []:
         intervals [140]:
             xmin = 269.80913717368645 
             xmax = 270.6878117299225 
-            text = "vaso" 
+            text = "baso" 
         intervals [141]:
             xmin = 270.6878117299225 
             xmax = 272.8125090817471 
@@ -1016,14 +1016,14 @@ item []:
             text = "u" 
         intervals [89]:
             xmin = 191.31276074929082 
-            xmax = 193.960034571618 
+            xmax = 194.05962859891036 
             text = "" 
         intervals [90]:
-            xmin = 193.960034571618 
-            xmax = 194.20070226446512 
+            xmin = 194.05962859891036 
+            xmax = 194.1973579698478 
             text = "a" 
         intervals [91]:
-            xmin = 194.20070226446512 
+            xmin = 194.1973579698478 
             xmax = 197.2479413595546 
             text = "" 
         intervals [92]:
@@ -1032,10 +1032,10 @@ item []:
             text = "e" 
         intervals [93]:
             xmin = 197.36299535221818 
-            xmax = 200.90684550182533 
+            xmax = 200.9949690290918 
             text = "" 
         intervals [94]:
-            xmin = 200.90684550182533 
+            xmin = 200.9949690290918 
             xmax = 201.1216979941983 
             text = "i" 
         intervals [95]:

@@ -8,7 +8,7 @@ size = 2
 item []: 
     item [1]:
         class = "IntervalTier" 
-        name = "words," 
+        name = "words" 
         xmin = 0 
         xmax = 282 
         intervals: size = 155 
@@ -75,7 +75,7 @@ item []:
         intervals [16]:
             xmin = 73.92919728316393 
             xmax = 74.38100726376122 
-            text = "vaso" 
+            text = "baso" 
         intervals [17]:
             xmin = 74.38100726376122 
             xmax = 78.06842382015692 
@@ -267,7 +267,7 @@ item []:
         intervals [64]:
             xmin = 163.22960850591375 
             xmax = 163.94142755230757 
-            text = "piso" 
+            text = "viso" 
         intervals [65]:
             xmin = 163.94142755230757 
             xmax = 166.7134130045375 
@@ -355,7 +355,7 @@ item []:
         intervals [86]:
             xmin = 196.58007324579722 
             xmax = 196.97776083661768 
-            text = "pato" 
+            text = "vato" 
         intervals [87]:
             xmin = 196.97776083661768 
             xmax = 199.15345288894136 
@@ -539,7 +539,7 @@ item []:
         intervals [132]:
             xmin = 254.02386326222708 
             xmax = 254.59938662295394 
-            text = "vaso" 
+            text = "baso" 
         intervals [133]:
             xmin = 254.59938662295394 
             xmax = 256.1294127691786 

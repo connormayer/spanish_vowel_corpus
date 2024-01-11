@@ -75,7 +75,7 @@ item []:
         intervals [16]:
             xmin = 73.64954806387514 
             xmax = 74.43427129379931 
-            text = "vate" 
+            text = "bate" 
         intervals [17]:
             xmin = 74.43427129379931 
             xmax = 78.62166568102536 
@@ -155,7 +155,7 @@ item []:
         intervals [36]:
             xmin = 125.69869114205551 
             xmax = 126.66948260408978 
-            text = "vaso" 
+            text = "baso" 
         intervals [37]:
             xmin = 126.66948260408978 
             xmax = 131.07717119168055 
@@ -267,7 +267,7 @@ item []:
         intervals [64]:
             xmin = 195.03845086557072 
             xmax = 195.90334103897914 
-            text = "vote" 
+            text = "bote" 
         intervals [65]:
             xmin = 195.90334103897914 
             xmax = 200.24456342417443 
@@ -307,7 +307,7 @@ item []:
         intervals [74]:
             xmin = 218.09023644572616 
             xmax = 219.0107781633766 
-            text = "piso" 
+            text = "viso" 
         intervals [75]:
             xmin = 219.0107781633766 
             xmax = 222.9670485556833 
@@ -363,7 +363,7 @@ item []:
         intervals [88]:
             xmin = 249.88306880730508 
             xmax = 250.7144134545222 
-            text = "vaso" 
+            text = "baso" 
         intervals [89]:
             xmin = 250.7144134545222 
             xmax = 254.19912058548186 
@@ -451,7 +451,7 @@ item []:
         intervals [110]:
             xmin = 294.0589828195758 
             xmax = 294.65014164685863 
-            text = "pato" 
+            text = "vato" 
         intervals [111]:
             xmin = 294.65014164685863 
             xmax = 297.96147106760515 
@@ -643,7 +643,7 @@ item []:
         intervals [158]:
             xmin = 385.36120887004944 
             xmax = 386.2540157247451 
-            text = "pate" 
+            text = "bate" 
         intervals [159]:
             xmin = 386.2540157247451 
             xmax = 388.8865720992077 

@@ -147,7 +147,7 @@ item []:
         intervals [34]:
             xmin = 161.6633446970625 
             xmax = 162.16923539071038 
-            text = "vote" 
+            text = "bote" 
         intervals [35]:
             xmin = 162.16923539071038 
             xmax = 167.16560119721368 
@@ -155,7 +155,7 @@ item []:
         intervals [36]:
             xmin = 167.16560119721368 
             xmax = 167.76117068896002 
-            text = "vata" 
+            text = "bata" 
         intervals [37]:
             xmin = 167.76117068896002 
             xmax = 171.08366391098065 
@@ -171,7 +171,7 @@ item []:
         intervals [40]:
             xmin = 176.19869975484224 
             xmax = 176.79410087207478 
-            text = "vate" 
+            text = "bate" 
         intervals [41]:
             xmin = 176.79410087207478 
             xmax = 181.64141668666812 
@@ -227,7 +227,7 @@ item []:
         intervals [54]:
             xmin = 209.54174681526482 
             xmax = 210.44443185752368 
-            text = "vaso" 
+            text = "baso" 
         intervals [55]:
             xmin = 210.44443185752368 
             xmax = 214.70892332918018 
@@ -355,7 +355,7 @@ item []:
         intervals [86]:
             xmin = 277.7274620456037 
             xmax = 278.32076135612596 
-            text = "vata" 
+            text = "bata" 
         intervals [87]:
             xmin = 278.32076135612596 
             xmax = 281.6114119960097 
@@ -531,7 +531,7 @@ item []:
         intervals [130]:
             xmin = 368.2013367654239 
             xmax = 368.9992248880934 
-            text = "vaso" 
+            text = "baso" 
         intervals [131]:
             xmin = 368.9992248880934 
             xmax = 372.3920740609475 
@@ -539,7 +539,7 @@ item []:
         intervals [132]:
             xmin = 372.3920740609475 
             xmax = 373.16615625229707 
-            text = "vate" 
+            text = "bate" 
         intervals [133]:
             xmin = 373.16615625229707 
             xmax = 376.9212752803452 

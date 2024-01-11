@@ -19,7 +19,7 @@ item []:
         intervals [2]:
             xmin = 31.06949115151294 
             xmax = 31.865328662499984 
-            text = "vaso" 
+            text = "baso" 
         intervals [3]:
             xmin = 31.865328662499984 
             xmax = 35.412321363260865 
@@ -59,7 +59,7 @@ item []:
         intervals [12]:
             xmin = 50.95303993221585 
             xmax = 51.66160354962149 
-            text = "vata" 
+            text = "bata" 
         intervals [13]:
             xmin = 51.66160354962149 
             xmax = 54.90017990550192 
@@ -83,7 +83,7 @@ item []:
         intervals [18]:
             xmin = 62.66728268800036 
             xmax = 63.406547409440044 
-            text = "vate" 
+            text = "bate" 
         intervals [19]:
             xmin = 63.406547409440044 
             xmax = 67.17206677969986 
@@ -547,7 +547,7 @@ item []:
         intervals [134]:
             xmin = 278.9694617312302 
             xmax = 279.7101647074491 
-            text = "vaso" 
+            text = "baso" 
         intervals [135]:
             xmin = 279.7101647074491 
             xmax = 282.264752933243 

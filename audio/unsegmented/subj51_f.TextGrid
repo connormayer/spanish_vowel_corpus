@@ -83,7 +83,7 @@ item []:
         intervals [18]:
             xmin = 90.31064869813129 
             xmax = 90.98503928698318 
-            text = "piso" 
+            text = "viso" 
         intervals [19]:
             xmin = 90.98503928698318 
             xmax = 93.76147215494724 
@@ -203,7 +203,7 @@ item []:
         intervals [48]:
             xmin = 142.1019504867324 
             xmax = 142.59914566434 
-            text = "pate" 
+            text = "bate" 
         intervals [49]:
             xmin = 142.59914566434 
             xmax = 144.98179961859972 
@@ -299,7 +299,7 @@ item []:
         intervals [72]:
             xmin = 180.46537022933566 
             xmax = 181.07733950240458 
-            text = "paso" 
+            text = "baso" 
         intervals [73]:
             xmin = 181.07733950240458 
             xmax = 183.56617151589612 
@@ -347,7 +347,7 @@ item []:
         intervals [84]:
             xmin = 199.6093198389936 
             xmax = 200.00643897288214 
-            text = "pato" 
+            text = "vato" 
         intervals [85]:
             xmin = 200.00643897288214 
             xmax = 202.67964525626266 
@@ -363,7 +363,7 @@ item []:
         intervals [88]:
             xmin = 205.65393965019194 
             xmax = 206.29028342218635 
-            text = "vaso" 
+            text = "baso" 
         intervals [89]:
             xmin = 206.29028342218635 
             xmax = 208.73528791695878 
@@ -443,7 +443,7 @@ item []:
         intervals [108]:
             xmin = 238.56413073972746 
             xmax = 239.06840430066865 
-            text = "pata" 
+            text = "bata" 
         intervals [109]:
             xmin = 239.06840430066865 
             xmax = 241.616432873815 
@@ -459,7 +459,7 @@ item []:
         intervals [112]:
             xmin = 244.72047635107435 
             xmax = 245.3062846210976 
-            text = "vate" 
+            text = "bate" 
         intervals [113]:
             xmin = 245.3062846210976 
             xmax = 247.68697687024323 

@@ -67,7 +67,7 @@ item []:
         intervals [14]:
             xmin = 69.68257889566794 
             xmax = 70.18365075030934 
-            text = "vote" 
+            text = "bote" 
         intervals [15]:
             xmin = 70.18365075030934 
             xmax = 72.24547957690478 
@@ -203,7 +203,7 @@ item []:
         intervals [48]:
             xmin = 105.73778955961359 
             xmax = 106.15019224612416 
-            text = "beca" 
+            text = "peca" 
         intervals [49]:
             xmin = 106.15019224612416 
             xmax = 108.02674417889763 
@@ -243,7 +243,7 @@ item []:
         intervals [58]:
             xmin = 116.26641848252967 
             xmax = 116.88082482477232 
-            text = "vaso" 
+            text = "baso" 
         intervals [59]:
             xmin = 116.88082482477232 
             xmax = 118.12644070182752 
@@ -259,7 +259,7 @@ item []:
         intervals [62]:
             xmin = 119.85155225564668 
             xmax = 120.28090458741194 
-            text = "pato" 
+            text = "vato" 
         intervals [63]:
             xmin = 120.28090458741194 
             xmax = 121.30351763626341 
@@ -363,7 +363,7 @@ item []:
         intervals [88]:
             xmin = 140.2549153590291 
             xmax = 140.8060214433161 
-            text = "vaso" 
+            text = "baso" 
         intervals [89]:
             xmin = 140.8060214433161 
             xmax = 142.04082228453092 
@@ -547,7 +547,7 @@ item []:
         intervals [134]:
             xmin = 177.87981737611918 
             xmax = 178.46628751314893 
-            text = "veta" 
+            text = "beta" 
         intervals [135]:
             xmin = 178.46628751314893 
             xmax = 179.4720002282535 
@@ -555,7 +555,7 @@ item []:
         intervals [136]:
             xmin = 179.4720002282535 
             xmax = 180.02465270051974 
-            text = "vate" 
+            text = "bate" 
         intervals [137]:
             xmin = 180.02465270051974 
             xmax = 181.0723275333159 

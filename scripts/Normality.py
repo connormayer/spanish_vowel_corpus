@@ -6,25 +6,28 @@ import statsmodels.api as sm
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 
-
-
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
+from sklearn.model_selection import RepeatedStratifiedKFold
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
 
 os.chdir("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/data")
 df = pd.read_csv("results_modified.csv")
 
-##import data
+## Import data
 x_values = df.drop(["Filename", "Subject", "Vowel"], 1)
     # Drop data that isn't acoustic measurements.
 
 y_values = df["Vowel"]
 
 
-
-##Visualizations for Normality
+'''
+## Visualizations for Normality
 titles = list(x_values.columns)
     # Create list from pd df column names to use as plot titles.
 
-#Histogram
+# Histogram
 figure_hist, axes_hist  =  plt.subplots(2, 3, figsize = (10,6))
     # Initialize the figure & subplots for histogram with six independent
     # variables - 2 rows 3 columns.
@@ -41,7 +44,7 @@ for row in range(2):
 figure_hist.suptitle('Histogram', fontsize = 16, fontweight = 'bold') # Title fig
 plt.tight_layout()
 
-#QQ plots; same process as above
+# QQ plots; same process as above
 figure_qq, axes_qq  =  plt.subplots(2, 3, figsize = (10,6))
 
 for row in range(2):
@@ -55,3 +58,30 @@ figure_qq.suptitle('QQ Plots', fontsize = 16, fontweight = 'bold')
 plt.tight_layout()
 
 plt.show()
+
+'''
+
+
+## Define models
+models_list = [LinearDiscriminantAnalysis(), QuadraticDiscriminantAnalysis()]
+
+k_fold = RepeatedStratifiedKFold(n_splits=10, # num of k-folds
+                                     n_repeats=10
+                                         # num of repeats of 10-folds
+                                     )
+
+for model in models_list:
+    model.fit(x_values, y_values)
+
+    scores = cross_val_score(model,
+                             x_values,
+                             y_values,
+                             cv = k_fold, # Cross validation splitting strategy
+                             n_jobs = -1 # Jobs use all processors
+                             )
+
+    print(f'Total score for {model} is {np.mean(scores)}')
+    
+
+
+
