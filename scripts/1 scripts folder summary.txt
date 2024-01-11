@@ -1,0 +1,45 @@
+block_vowels.py:
+	
+
+collect_formant_data_from_files_detailed.praat
+
+	
+find_outliers.R
+
+	
+LDA Summary.pdf
+	Summary of LDA/QDA models and the cross validation techniques
+	used to compare models.
+
+lda.py
+	[reformatted to Normality.py and qda.py]
+	Builds LDA and QDA models, compares general accuracy.
+	Creates models with different parameters and computes dPrime
+	score for each.
+
+Normality.py
+	reads data and plots Histograms and QQ plots to check for 
+	normality
+
+Move_Outliers.py
+	Using outlier CSVs (exported by "Outlier_Detection.R"), move
+	corresponding files into new folders.
+
+Outlier_Detection.R
+	Takes the CSV data exported from Praat ("results.csv") and
+	identify NA values, Vowel labeling errors. 
+	Finds outliers (z_score >= 2.5) in pitch, formants, duration
+	and outputs CSVs for examination.
+
+perceptual_map.py
+	
+
+qda.py
+	creates qda models for all possible combinations of parameters 
+	and computes mean accuracy and dPrime score
+
+segment_vowels.praat
+	
+
+segment_words.praat
+	
