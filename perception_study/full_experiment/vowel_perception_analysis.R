@@ -78,6 +78,34 @@ task_full <- task_full %>%
   mutate(vowel = ifelse(vowel == 'oo', 'o', vowel)) %>%
   mutate(vowel = ifelse(vowel == 'io', 'i', vowel))
 
+task_full %>% 
+  group_by(filename, vowel) %>%
+  summarize(correct=mean(correct)) %>%
+  filter(correct < 0.1)
+
+# Correct some labeling errors
+task_full %>%
+  filter(filename == 'a_subj8_f_viso_227.wav') %>%
+  mutate(vowel='i', correct = (response == 'i'))
+
+task_full %>%
+  filter(filename == 'i_subj2_f_toque_163.wav') %>%
+  mutate(vowel='o', correct = (response == 'o'))
+
+task_full %>%
+  filter(filename == 'o_subj14_m_veta_121.wav') %>%
+  mutate(vowel='e', correct = (response == 'e'))
+
+task_full %>%
+  filter(filename == 'a_subj69_m_quita_222.wav') %>%
+  mutate(vowel='i', correct = (response == 'i'))
+
+# subj754_m_coro_20
+
+# subj74_m_saque_23
+
+# quite 139 subj 52
+
 # mislabeled_row <- task_full %>% filter(filename == 'a_subj2_f_vara_85.wav' & block == 'quiet')
 # mislabeled_row$vowel <- 'a'
 # mislabeled_row$word <- 'vara'
@@ -138,7 +166,7 @@ task_full %>%
 ggplot(aes(vowel, response, fill=count)) +
   geom_tile() +
   geom_text(aes(label=count)) +
-  scale_fill_gradient(trans='log', breaks=c(0, 2, 8, 32, 128, 512), low="white", high="darkblue") +
+  scale_fill_gradient(trans='log', breaks=c(0, 2, 8, 32, 128, 512), low="white", high="red") +
   facet_grid(~ block)
 ggsave('figures/confusion_matrix.png')
 
@@ -156,4 +184,5 @@ task_full %>%
   group_by(vowel, response) %>%
   count() %>%
   pivot_wider(names_from=response, values_from=n) %>%
-  write_csv('../confusion_matrix.csv')
+  write_csv('confusion_matrix.csv')
+
