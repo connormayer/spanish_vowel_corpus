@@ -21,16 +21,8 @@ item []:
         name = "vowels" 
         xmin = 0 
         xmax = 0.6033181967405596 
-        intervals: size = 3 
+        intervals: size = 1 
         intervals [1]:
             xmin = 0 
-            xmax = 0.051584487939436485 
-            text = "" 
-        intervals [2]:
-            xmin = 0.051584487939436485 
-            xmax = 0.19677066176672042 
-            text = "" 
-        intervals [3]:
-            xmin = 0.19677066176672042 
             xmax = 0.6033181967405596 
             text = "" 
