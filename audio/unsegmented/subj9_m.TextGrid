@@ -387,7 +387,7 @@ item []:
         intervals [94]:
             xmin = 275.4083858367563 
             xmax = 275.96191844977574 
-            text = "quite" 
+            text = "pite" 
         intervals [95]:
             xmin = 275.96191844977574 
             xmax = 278.6303564854649 
@@ -753,7 +753,7 @@ item []:
         intervals [29]:
             xmin = 134.72119797620513 
             xmax = 138.3480464960898 
-            text = "o" 
+            text = "" 
         intervals [30]:
             xmin = 138.3480464960898 
             xmax = 138.41048659634822 

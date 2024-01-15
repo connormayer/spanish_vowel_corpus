@@ -155,7 +155,7 @@ item []:
         intervals [36]:
             xmin = 101.45045153540056 
             xmax = 101.97229021816574 
-            text = "beta" 
+            text = "bota" 
         intervals [37]:
             xmin = 101.97229021816574 
             xmax = 104.36753720986992 
@@ -243,7 +243,7 @@ item []:
         intervals [58]:
             xmin = 133.6600124234046 
             xmax = 134.27600173815705 
-            text = "vato" 
+            text = "bata" 
         intervals [59]:
             xmin = 134.27600173815705 
             xmax = 136.79850088346217 
@@ -438,12 +438,12 @@ item []:
             text = "beta" 
         intervals [107]:
             xmin = 207.29142378325727 
-            xmax = 209.7249174477871 
+            xmax = 209.66473852990535 
             text = "" 
         intervals [108]:
-            xmin = 209.7249174477871 
+            xmin = 209.66473852990535 
             xmax = 210.20131482277606 
-            text = "cura" 
+            text = "pura " 
         intervals [109]:
             xmin = 210.20131482277606 
             xmax = 212.8006456776041 

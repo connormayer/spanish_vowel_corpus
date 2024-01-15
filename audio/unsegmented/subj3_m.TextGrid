@@ -139,7 +139,7 @@ item []:
         intervals [32]:
             xmin = 105.32735483982353 
             xmax = 105.74852185796017 
-            text = "cura" 
+            text = "pura" 
         intervals [33]:
             xmin = 105.74852185796017 
             xmax = 108.26431831380265 
@@ -147,7 +147,7 @@ item []:
         intervals [34]:
             xmin = 108.26431831380265 
             xmax = 108.83693383388662 
-            text = "quite" 
+            text = "pite" 
         intervals [35]:
             xmin = 108.83693383388662 
             xmax = 111.1843878575432 
@@ -451,7 +451,7 @@ item []:
         intervals [110]:
             xmin = 221.73100775142598 
             xmax = 222.172565466458 
-            text = "quite" 
+            text = "pite" 
         intervals [111]:
             xmin = 222.172565466458 
             xmax = 224.7350682636481 

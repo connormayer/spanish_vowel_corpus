@@ -35,7 +35,7 @@ item []:
         intervals [6]:
             xmin = 52.86431382464576 
             xmax = 53.53777131060538 
-            text = "bote" 
+            text = "bate" 
         intervals [7]:
             xmin = 53.53777131060538 
             xmax = 56.15109924341344 
@@ -91,7 +91,7 @@ item []:
         intervals [20]:
             xmin = 74.73730275903242 
             xmax = 75.53743092281017 
-            text = "supo" 
+            text = "supe" 
         intervals [21]:
             xmin = 75.53743092281017 
             xmax = 77.92340345820061 

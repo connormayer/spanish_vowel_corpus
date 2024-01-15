@@ -107,7 +107,7 @@ item []:
         intervals [24]:
             xmin = 110.73035541341453 
             xmax = 111.46599378947107 
-            text = "saca" 
+            text = "seca" 
         intervals [25]:
             xmin = 111.46599378947107 
             xmax = 114.72795600940462 
@@ -123,7 +123,7 @@ item []:
         intervals [28]:
             xmin = 118.77702931166814 
             xmax = 119.7344831080695 
-            text = "saca" 
+            text = "saque" 
         intervals [29]:
             xmin = 119.7344831080695 
             xmax = 123.91724036262671 
@@ -163,7 +163,7 @@ item []:
         intervals [38]:
             xmin = 141.77123522406697 
             xmax = 142.37955052895617 
-            text = "beta" 
+            text = "bota" 
         intervals [39]:
             xmin = 142.37955052895617 
             xmax = 146.03878781807006 
@@ -355,7 +355,7 @@ item []:
         intervals [86]:
             xmin = 209.26972290921066 
             xmax = 209.78609000093732 
-            text = "quite" 
+            text = "pite" 
         intervals [87]:
             xmin = 209.78609000093732 
             xmax = 211.92805022848876 

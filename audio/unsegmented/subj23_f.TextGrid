@@ -395,7 +395,7 @@ item []:
         intervals [96]:
             xmin = 192.5410949673046 
             xmax = 193.0460853570672 
-            text = "quite" 
+            text = "pite" 
         intervals [97]:
             xmin = 193.0460853570672 
             xmax = 195.3427228895903 
@@ -647,7 +647,7 @@ item []:
         intervals [159]:
             xmin = 281.3293939190534 
             xmax = 317.7650793650794 
-            text = "" 
+            text = " " 
     item [2]:
         class = "IntervalTier" 
         name = "vowels" 

@@ -574,12 +574,12 @@ item []:
             text = "quito" 
         intervals [141]:
             xmin = 270.3278951644679 
-            xmax = 273.10477131531366 
+            xmax = 273.05059515473073 
             text = "" 
         intervals [142]:
-            xmin = 273.10477131531366 
+            xmin = 273.05059515473073 
             xmax = 273.6966755684952 
-            text = "quite" 
+            text = "pite" 
         intervals [143]:
             xmin = 273.6966755684952 
             xmax = 276.3048351047093 
@@ -587,7 +587,7 @@ item []:
         intervals [144]:
             xmin = 276.3048351047093 
             xmax = 276.77161129431533 
-            text = "pura" 
+            text = "cura" 
         intervals [145]:
             xmin = 276.77161129431533 
             xmax = 280.05970392108475 

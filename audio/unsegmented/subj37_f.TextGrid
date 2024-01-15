@@ -86,12 +86,12 @@ item []:
             text = "pico" 
         intervals [19]:
             xmin = 62.17459933156206 
-            xmax = 64.82007078445596 
+            xmax = 64.61880931226577 
             text = "" 
         intervals [20]:
-            xmin = 64.82007078445596 
+            xmin = 64.61880931226577 
             xmax = 65.2450475785894 
-            text = "cura" 
+            text = "pura" 
         intervals [21]:
             xmin = 65.2450475785894 
             xmax = 67.78160400177899 
@@ -139,7 +139,7 @@ item []:
         intervals [32]:
             xmin = 81.93695155455259 
             xmax = 82.44790252771358 
-            text = "beta" 
+            text = "veto" 
         intervals [33]:
             xmin = 82.44790252771358 
             xmax = 84.6826278844192 
@@ -579,7 +579,7 @@ item []:
         intervals [142]:
             xmin = 230.9743252083796 
             xmax = 231.38089736172708 
-            text = "peca" 
+            text = "vete" 
         intervals [143]:
             xmin = 231.38089736172708 
             xmax = 233.7060407880611 
@@ -595,7 +595,7 @@ item []:
         intervals [146]:
             xmin = 236.4002417289166 
             xmax = 236.81306935737754 
-            text = "quito" 
+            text = "pite" 
         intervals [147]:
             xmin = 236.81306935737754 
             xmax = 238.9104968886982 
@@ -643,7 +643,7 @@ item []:
         intervals [158]:
             xmin = 253.19002239945556 
             xmax = 253.63782929587308 
-            text = "tusa" 
+            text = "pisa" 
         intervals [159]:
             xmin = 253.63782929587308 
             xmax = 255.88598898381207 

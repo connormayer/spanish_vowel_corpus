@@ -95,11 +95,11 @@ item []:
         intervals [21]:
             xmin = 62.38916755777254 
             xmax = 65.17366225369742 
-            text = "" 
+            text = "  " 
         intervals [22]:
             xmin = 65.17366225369742 
             xmax = 66.07500947964238 
-            text = "saca" 
+            text = "saco" 
         intervals [23]:
             xmin = 66.07500947964238 
             xmax = 69.46373752620406 
@@ -363,7 +363,7 @@ item []:
         intervals [88]:
             xmin = 178.54567487309401 
             xmax = 179.42806660118583 
-            text = "supo" 
+            text = "supe" 
         intervals [89]:
             xmin = 179.42806660118583 
             xmax = 182.0165366207577 
@@ -567,7 +567,7 @@ item []:
         intervals [139]:
             xmin = 262.05225252948975 
             xmax = 264.7348498779916 
-            text = "" 
+            text = "  " 
         intervals [140]:
             xmin = 264.7348498779916 
             xmax = 265.646293821408 

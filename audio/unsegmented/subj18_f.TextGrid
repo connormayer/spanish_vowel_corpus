@@ -267,7 +267,7 @@ item []:
         intervals [64]:
             xmin = 202.11789874876445 
             xmax = 202.65185659351215 
-            text = "beta" 
+            text = "veto" 
         intervals [65]:
             xmin = 202.65185659351215 
             xmax = 206.95808110745926 

@@ -179,7 +179,7 @@ item []:
         intervals [42]:
             xmin = 125.14127226358285 
             xmax = 125.69977103037424 
-            text = "bata" 
+            text = "beta" 
         intervals [43]:
             xmin = 125.69977103037424 
             xmax = 130.9320025757907 
@@ -467,7 +467,7 @@ item []:
         intervals [114]:
             xmin = 226.77728675382886 
             xmax = 227.3274838074775 
-            text = "buque" 
+            text = "cuco" 
         intervals [115]:
             xmin = 227.3274838074775 
             xmax = 231.29761449870315 

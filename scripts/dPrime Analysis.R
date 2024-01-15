@@ -81,7 +81,6 @@ for (x in 1:nrow(params)){
 data %>%
   ggplot(aes(x = Vowels,
              y = dPrime,
-             color = Parameter,
              shape = Included))+
   geom_point()+
   guides(shape = guide_legend(reverse=TRUE))+
@@ -89,7 +88,9 @@ data %>%
   scale_colour_brewer(palette = "Set1") +
   labs(title = "Average dPrime Score",
        x = "Vowel Pairs",
-       y = "dPrime")
+       y = "dPrime") +
+  facet_wrap(~ Parameter)
+
 
 data_mean %>%
   ggplot(aes(x = Parameter,
@@ -99,6 +100,6 @@ data_mean %>%
   guides(shape = guide_legend(reverse=TRUE))+
   scale_shape_manual(values = c(1,19))+ # Hollow & filled circles
   labs(title = "Average dPrime Scores Across Vowel Pairs",
-       x = "Vowel Pairs",
+       x = "Parameters",
        y = "dPrime")
 

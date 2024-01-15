@@ -54,10 +54,10 @@ item []:
             text = "coro" 
         intervals [11]:
             xmin = 87.55172351433575 
-            xmax = 92.73266204063641 
+            xmax = 92.55978585652517 
             text = "" 
         intervals [12]:
-            xmin = 92.73266204063641 
+            xmin = 92.55978585652517 
             xmax = 93.37563960240772 
             text = "beta" 
         intervals [13]:
@@ -187,7 +187,7 @@ item []:
         intervals [44]:
             xmin = 160.12632725038267 
             xmax = 160.93783238821112 
-            text = "voto" 
+            text = "bote" 
         intervals [45]:
             xmin = 160.93783238821112 
             xmax = 164.50182488308488 
@@ -387,7 +387,7 @@ item []:
         intervals [94]:
             xmin = 257.9659058449181 
             xmax = 258.6432851969238 
-            text = "bota" 
+            text = "beta" 
         intervals [95]:
             xmin = 258.6432851969238 
             xmax = 261.47776199224035 
