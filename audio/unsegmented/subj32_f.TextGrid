@@ -684,10 +684,10 @@ item []:
             text = "" 
         intervals [6]:
             xmin = 70.66971848861594 
-            xmax = 70.85315190356668 
+            xmax = 70.86349001831915 
             text = "u" 
         intervals [7]:
-            xmin = 70.85315190356668 
+            xmin = 70.86349001831915 
             xmax = 74.9925177057604 
             text = "" 
         intervals [8]:

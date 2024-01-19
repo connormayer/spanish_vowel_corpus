@@ -6,8 +6,10 @@ library(tidyverse, warn.conflicts = FALSE)
 # Import the CSV (exported from Python) and pull vowel pairs and parameters. 
 
 setwd("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/data")
-df <- read_csv("dprime.csv") # Import dPrime data
-
+df <- read_csv("dprime.csv") %>% # Import dPrime data
+  mutate(Vowels = paste(str_sub(Vowels,3,3), 
+                        str_sub(Vowels,-3,-3)
+                        ))
 pairs <- unique(df[3]) # Create tibble of vowel pairs
 num_pairs <- nrow(pairs)
 
@@ -89,7 +91,8 @@ data %>%
   labs(title = "Average dPrime Score",
        x = "Vowel Pairs",
        y = "dPrime") +
-  facet_wrap(~ Parameter)
+  guides(x =  guide_axis(angle = 45))+
+  facet_wrap(~ Parameter,scales = "free_x")
 
 
 data_mean %>%
@@ -101,5 +104,6 @@ data_mean %>%
   scale_shape_manual(values = c(1,19))+ # Hollow & filled circles
   labs(title = "Average dPrime Scores Across Vowel Pairs",
        x = "Parameters",
-       y = "dPrime")
+       y = "dPrime")+
+  guides(x =  guide_axis(angle = 45))
 

@@ -43,11 +43,11 @@ mislabeled <- df_words %>%
 overlabeled <- df_words %>%
   anti_join(mislabeled) %>% # only examine acceptable labels
   group_by(Subject, Word) %>%
-  filter(n() != 2) # Return rows where word is labeled more than twice
+  filter(n() > 2) # Return rows where word is labeled more than twice
                    # or missing label
 
 corrections <- bind_rows(mislabeled, overlabeled) %>%
-  arrange(Subject, Word) %>%
+  arrange(Subject, Word) #%>%
   #write_csv("Corrections.csv")
   
 
@@ -97,3 +97,4 @@ duration_outliers <- df_50_norm %>%
   filter(abs(Z_Duration)>=z_score) %>%
   select(Filename, Subject, Vowel, Duration, Z_Duration) %>%
   write_csv("Duration_Outliers.csv")
+
