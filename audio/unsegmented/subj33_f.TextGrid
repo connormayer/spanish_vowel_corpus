@@ -99,7 +99,7 @@ item []:
         intervals [22]:
             xmin = 83.73454900114774 
             xmax = 84.07402120233816 
-            text = "peca" 
+            text = "pica" 
         intervals [23]:
             xmin = 84.07402120233816 
             xmax = 86.45576886043622 
@@ -179,7 +179,7 @@ item []:
         intervals [42]:
             xmin = 113.11572596287974 
             xmax = 113.51491116992896 
-            text = "quite" 
+            text = "pite" 
         intervals [43]:
             xmin = 113.51491116992896 
             xmax = 116.12131315565502 
@@ -741,7 +741,7 @@ item []:
         intervals [22]:
             xmin = 83.76453918839817 
             xmax = 83.86199145938429 
-            text = "e" 
+            text = "i" 
         intervals [23]:
             xmin = 83.86199145938429 
             xmax = 86.51617280152537 

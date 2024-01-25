@@ -24,10 +24,10 @@ item []:
         intervals: size = 3 
         intervals [1]:
             xmin = 0 
-            xmax = 0.09022558186319429 
+            xmax = 0.08667463314901624 
             text = "" 
         intervals [2]:
-            xmin = 0.09022558186319429 
+            xmin = 0.08667463314901624 
             xmax = 0.25596329352276825 
             text = "a" 
         intervals [3]:

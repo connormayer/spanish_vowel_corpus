@@ -9,13 +9,13 @@
 
 form Analyze formant values from labeled segments in files
 	comment Directory of sound files
-	text sound_directory C:\Users\conno\git_repos\spanish_vowel_corpus\audio\word_segmented\
+	text sound_directory E:\git_repos\spanish_vowel_corpus\audio\word_segmented\
 	sentence Sound_file_extension .wav
 	comment Directory of TextGrid files
-	text textGrid_directory C:\Users\conno\git_repos\spanish_vowel_corpus\audio\word_segmented\
+	text textGrid_directory E:\git_repos\spanish_vowel_corpus\audio\word_segmented\
 	sentence TextGrid_file_extension .TextGrid
 	comment Full path of the resulting text file:
-	text resultfile C:\Users\conno\git_repos\spanish_vowel_corpus\audio\results.csv
+	text resultfile E:\git_repos\spanish_vowel_corpus\audio\results.csv
 	comment Which tier has the vowels you want to analyze?
 	sentence Tier vowels
 	comment Formant analysis parameters
