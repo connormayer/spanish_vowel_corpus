@@ -163,7 +163,7 @@ item []:
         intervals [38]:
             xmin = 86.57745372695695 
             xmax = 87.18132696331897 
-            text = "qutio" 
+            text = "quito" 
         intervals [39]:
             xmin = 87.18132696331897 
             xmax = 89.32237933925498 
@@ -187,7 +187,7 @@ item []:
         intervals [44]:
             xmin = 94.50688464774264 
             xmax = 95.2400062917787 
-            text = "vaso" 
+            text = "baso" 
         intervals [45]:
             xmin = 95.2400062917787 
             xmax = 97.21834153903538 
@@ -307,7 +307,7 @@ item []:
         intervals [74]:
             xmin = 134.1579779087802 
             xmax = 134.75813222823965 
-            text = "vate" 
+            text = "bate" 
         intervals [75]:
             xmin = 134.75813222823965 
             xmax = 136.75520541615185 
@@ -411,7 +411,7 @@ item []:
         intervals [100]:
             xmin = 168.73173254181157 
             xmax = 169.35604933888786 
-            text = "vaso" 
+            text = "baso" 
         intervals [101]:
             xmin = 169.35604933888786 
             xmax = 171.37092196110288 
@@ -716,18 +716,18 @@ item []:
             text = "" 
         intervals [14]:
             xmin = 54.938501771244155 
-            xmax = 55.02760390626457 
+            xmax = 55.02462527762008 
             text = "e" 
         intervals [15]:
-            xmin = 55.02760390626457 
+            xmin = 55.02462527762008 
             xmax = 57.79132657851329 
             text = "" 
         intervals [16]:
             xmin = 57.79132657851329 
-            xmax = 57.94389602864826 
+            xmax = 57.93993409454403 
             text = "o" 
         intervals [17]:
-            xmin = 57.94389602864826 
+            xmin = 57.93993409454403 
             xmax = 60.59064570228151 
             text = "" 
         intervals [18]:

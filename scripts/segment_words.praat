@@ -2,10 +2,10 @@
 tier_number = 1
 
 ## Where the input sound files and textgrids are.
-directory$ = "E:\Dropbox\ling\spanish_corpus\spanish_vowel_corpus\audio\unsegmented\"
+directory$ = "C:\Users\conno\git_repos\spanish_vowel_corpus\audio\unsegmented\"
 
 ## Where you want the segmented sound files and textgrids to be stored.
-outdir$ = "E:\Dropbox\ling\spanish_corpus\spanish_vowel_corpus\audio\word_segmented\"
+outdir$ = "C:\Users\conno\git_repos\spanish_vowel_corpus\audio\word_segmented\"
 
 ## Extension for sound files
 extension$ = ".wav"

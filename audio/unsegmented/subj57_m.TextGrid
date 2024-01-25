@@ -19,7 +19,7 @@ item []:
         intervals [2]:
             xmin = 30.952297756445006 
             xmax = 31.461580361906243 
-            text = "beto" 
+            text = "veto" 
         intervals [3]:
             xmin = 31.461580361906243 
             xmax = 34.45210554977032 
@@ -83,7 +83,7 @@ item []:
         intervals [18]:
             xmin = 54.73944231651406 
             xmax = 55.13515223850638 
-            text = "pita" 
+            text = "pica" 
         intervals [19]:
             xmin = 55.13515223850638 
             xmax = 57.346465555557586 
@@ -107,7 +107,7 @@ item []:
         intervals [24]:
             xmin = 62.93139275184036 
             xmax = 63.55155958156928 
-            text = "vaso" 
+            text = "baso" 
         intervals [25]:
             xmin = 63.55155958156928 
             xmax = 65.65117781861755 
@@ -139,7 +139,7 @@ item []:
         intervals [32]:
             xmin = 74.34870040528543 
             xmax = 75.01206216849945 
-            text = "vate" 
+            text = "bate" 
         intervals [33]:
             xmin = 75.01206216849945 
             xmax = 77.31264468898571 

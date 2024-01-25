@@ -155,7 +155,7 @@ item []:
         intervals [36]:
             xmin = 92.55624085925994 
             xmax = 93.1259348451807 
-            text = "vaso" 
+            text = "baso" 
         intervals [37]:
             xmin = 93.1259348451807 
             xmax = 95.86232106356708 
@@ -315,7 +315,7 @@ item []:
         intervals [76]:
             xmin = 159.62331722506337 
             xmax = 160.34929355584876 
-            text = "vate" 
+            text = "bate" 
         intervals [77]:
             xmin = 160.34929355584876 
             xmax = 163.23276182584058 
@@ -331,7 +331,7 @@ item []:
         intervals [80]:
             xmin = 166.61173359243347 
             xmax = 167.1882695506014 
-            text = "vate" 
+            text = "vato" 
         intervals [81]:
             xmin = 167.1882695506014 
             xmax = 169.74474101156343 
@@ -451,7 +451,7 @@ item []:
         intervals [110]:
             xmin = 216.37246520528038 
             xmax = 216.90944453943945 
-            text = "quite" 
+            text = "pite" 
         intervals [111]:
             xmin = 216.90944453943945 
             xmax = 219.48994351735078 
@@ -475,7 +475,7 @@ item []:
         intervals [116]:
             xmin = 226.62413586319107 
             xmax = 227.4182931870989 
-            text = "piso" 
+            text = "viso" 
         intervals [117]:
             xmin = 227.4182931870989 
             xmax = 230.0807880467972 
@@ -643,7 +643,7 @@ item []:
         intervals [158]:
             xmin = 296.11032699669437 
             xmax = 296.70626176579935 
-            text = "vaso" 
+            text = "baso" 
         intervals [159]:
             xmin = 296.70626176579935 
             xmax = 299.2359259405947 
@@ -712,10 +712,10 @@ item []:
             text = "e" 
         intervals [13]:
             xmin = 53.83960951633052 
-            xmax = 56.71899013003247 
+            xmax = 56.76260858259799 
             text = "" 
         intervals [14]:
-            xmin = 56.71899013003247 
+            xmin = 56.76260858259799 
             xmax = 56.88025759862455 
             text = "i" 
         intervals [15]:

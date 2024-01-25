@@ -467,7 +467,7 @@ item []:
         intervals [114]:
             xmin = 311.4834261942565 
             xmax = 312.19539952768616 
-            text = "foto" 
+            text = "voto" 
         intervals [115]:
             xmin = 312.19539952768616 
             xmax = 315.5054735583973 
@@ -491,7 +491,7 @@ item []:
         intervals [120]:
             xmin = 324.9253734320113 
             xmax = 325.5871071566987 
-            text = "vaso" 
+            text = "baso" 
         intervals [121]:
             xmin = 325.5871071566987 
             xmax = 330.46424177084896 

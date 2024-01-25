@@ -29,7 +29,7 @@ item []:
         intervals [2]:
             xmin = 0.1033991365762148 
             xmax = 0.21249346261038227 
-            text = "io" 
+            text = "i" 
         intervals [3]:
             xmin = 0.21249346261038227 
             xmax = 0.5589717042821576 

@@ -403,7 +403,7 @@ item []:
         intervals [98]:
             xmin = 208.49242670453293 
             xmax = 208.84023236173226 
-            text = "veta" 
+            text = "beta" 
         intervals [99]:
             xmin = 208.84023236173226 
             xmax = 211.47709556352964 
@@ -680,10 +680,10 @@ item []:
             text = "o" 
         intervals [11]:
             xmin = 54.87356274242103 
-            xmax = 59.17137770899618 
+            xmax = 59.2013003651313 
             text = "" 
         intervals [12]:
-            xmin = 59.17137770899618 
+            xmin = 59.2013003651313 
             xmax = 59.334416209100475 
             text = "a" 
         intervals [13]:
@@ -744,14 +744,14 @@ item []:
             text = "i" 
         intervals [27]:
             xmin = 87.15024947101294 
-            xmax = 91.28538396659354 
+            xmax = 91.28280674384399 
             text = "" 
         intervals [28]:
-            xmin = 91.28538396659354 
-            xmax = 91.46847315797665 
+            xmin = 91.28280674384399 
+            xmax = 91.47242092385905 
             text = "i" 
         intervals [29]:
-            xmin = 91.46847315797665 
+            xmin = 91.47242092385905 
             xmax = 95.24643094343726 
             text = "" 
         intervals [30]:

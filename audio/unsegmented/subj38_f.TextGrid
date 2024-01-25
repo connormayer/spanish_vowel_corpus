@@ -123,7 +123,7 @@ item []:
         intervals [28]:
             xmin = 77.11153427798726 
             xmax = 77.61084635372177 
-            text = "piso" 
+            text = "viso" 
         intervals [29]:
             xmin = 77.61084635372177 
             xmax = 80.5628674825816 
@@ -291,7 +291,7 @@ item []:
         intervals [70]:
             xmin = 153.7552917783889 
             xmax = 154.49096483229408 
-            text = "paso" 
+            text = "baso" 
         intervals [71]:
             xmin = 154.49096483229408 
             xmax = 157.5634980470379 
@@ -451,7 +451,7 @@ item []:
         intervals [110]:
             xmin = 221.57949287213955 
             xmax = 222.3112949592339 
-            text = "vaso" 
+            text = "baso" 
         intervals [111]:
             xmin = 222.3112949592339 
             xmax = 225.2815068832054 

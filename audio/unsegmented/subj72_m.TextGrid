@@ -59,7 +59,7 @@ item []:
         intervals [12]:
             xmin = 61.772496617310004 
             xmax = 62.23956761223092 
-            text = "toco" 
+            text = "toca" 
         intervals [13]:
             xmin = 62.23956761223092 
             xmax = 65.37057615456143 
@@ -411,7 +411,7 @@ item []:
         intervals [100]:
             xmin = 229.25078629673726 
             xmax = 229.84298893202376 
-            text = "Seque" 
+            text = "seque" 
         intervals [101]:
             xmin = 229.84298893202376 
             xmax = 232.72230540649932 
@@ -595,7 +595,7 @@ item []:
         intervals [146]:
             xmin = 301.8023495120468 
             xmax = 302.1202629950266 
-            text = "curra" 
+            text = "cura" 
         intervals [147]:
             xmin = 302.1202629950266 
             xmax = 305.8396708115935 

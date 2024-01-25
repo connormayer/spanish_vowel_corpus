@@ -91,7 +91,7 @@ item []:
         intervals [20]:
             xmin = 69.00308035372434 
             xmax = 69.42791619455448 
-            text = "vaso" 
+            text = "baso" 
         intervals [21]:
             xmin = 69.42791619455448 
             xmax = 71.65391673554167 
@@ -387,7 +387,7 @@ item []:
         intervals [94]:
             xmin = 171.82326584247866 
             xmax = 172.26904149794882 
-            text = "vaso" 
+            text = "baso" 
         intervals [95]:
             xmin = 172.26904149794882 
             xmax = 174.48981762048425 
@@ -1160,14 +1160,14 @@ item []:
             text = "u" 
         intervals [125]:
             xmin = 212.79095297628245 
-            xmax = 215.21597750068887 
+            xmax = 215.21218218030901 
             text = "" 
         intervals [126]:
-            xmin = 215.21597750068887 
-            xmax = 215.3836136516021 
+            xmin = 215.21218218030901 
+            xmax = 215.39211936960763 
             text = "a" 
         intervals [127]:
-            xmin = 215.3836136516021 
+            xmin = 215.39211936960763 
             xmax = 217.75631809320492 
             text = "" 
         intervals [128]:

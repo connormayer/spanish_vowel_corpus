@@ -8,10 +8,10 @@ size = 2
 item []: 
     item [1]:
         class = "IntervalTier" 
-        name = "words," 
+        name = "words" 
         xmin = 0 
         xmax = 415 
-        intervals: size = 166 
+        intervals: size = 165 
         intervals [1]:
             xmin = 0 
             xmax = 52.23999300116228 
@@ -131,7 +131,7 @@ item []:
         intervals [30]:
             xmin = 108.88670312285154 
             xmax = 109.42901372882143 
-            text = "pata" 
+            text = "bata" 
         intervals [31]:
             xmin = 109.42901372882143 
             xmax = 112.96447817411813 
@@ -251,7 +251,7 @@ item []:
         intervals [60]:
             xmin = 172.47806996861883 
             xmax = 172.83837156022338 
-            text = "paso" 
+            text = "baso" 
         intervals [61]:
             xmin = 172.83837156022338 
             xmax = 176.72599723037777 
@@ -307,7 +307,7 @@ item []:
         intervals [74]:
             xmin = 202.98802844651217 
             xmax = 203.23520902427856 
-            text = "pura" 
+            text = "cura" 
         intervals [75]:
             xmin = 203.23520902427856 
             xmax = 207.0351319313961 
@@ -331,7 +331,7 @@ item []:
         intervals [80]:
             xmin = 214.95171135704828 
             xmax = 215.27799628411154 
-            text = "piso" 
+            text = "viso" 
         intervals [81]:
             xmin = 215.27799628411154 
             xmax = 219.12693507299423 
@@ -614,65 +614,61 @@ item []:
             text = "bate" 
         intervals [151]:
             xmin = 366.7757729151773 
-            xmax = 370.5737250971353 
-            text = "" 
-        intervals [152]:
-            xmin = 370.5737250971353 
             xmax = 370.57804592868683 
             text = "" 
-        intervals [153]:
+        intervals [152]:
             xmin = 370.57804592868683 
             xmax = 370.9388353632436 
             text = "bota" 
-        intervals [154]:
+        intervals [153]:
             xmin = 370.9388353632436 
             xmax = 375.0685422634064 
             text = "" 
-        intervals [155]:
+        intervals [154]:
             xmin = 375.0685422634064 
             xmax = 375.4683073138313 
             text = "toque" 
-        intervals [156]:
+        intervals [155]:
             xmin = 375.4683073138313 
             xmax = 380.1425745414485 
             text = "" 
-        intervals [157]:
+        intervals [156]:
             xmin = 380.1425745414485 
             xmax = 380.50607900874917 
-            text = "beto" 
-        intervals [158]:
+            text = "veto" 
+        intervals [157]:
             xmin = 380.50607900874917 
             xmax = 384.88975409218654 
             text = "" 
-        intervals [159]:
+        intervals [158]:
             xmin = 384.88975409218654 
             xmax = 385.2662423761031 
             text = "pisa" 
-        intervals [160]:
+        intervals [159]:
             xmin = 385.2662423761031 
             xmax = 389.32235821255847 
             text = "" 
-        intervals [161]:
+        intervals [160]:
             xmin = 389.32235821255847 
             xmax = 389.82040135717034 
             text = "quite" 
-        intervals [162]:
+        intervals [161]:
             xmin = 389.82040135717034 
             xmax = 393.9811395257975 
             text = "" 
-        intervals [163]:
+        intervals [162]:
             xmin = 393.9811395257975 
             xmax = 394.367080646347 
             text = "seque" 
-        intervals [164]:
+        intervals [163]:
             xmin = 394.367080646347 
             xmax = 398.54457888726984 
             text = "" 
-        intervals [165]:
+        intervals [164]:
             xmin = 398.54457888726984 
             xmax = 398.91939287205076 
             text = "bote" 
-        intervals [166]:
+        intervals [165]:
             xmin = 398.91939287205076 
             xmax = 415 
             text = "" 

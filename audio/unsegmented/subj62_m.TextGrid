@@ -19,7 +19,7 @@ item []:
         intervals [2]:
             xmin = 33.363723313502554 
             xmax = 33.736969011964575 
-            text = "vaso" 
+            text = "baso" 
         intervals [3]:
             xmin = 33.736969011964575 
             xmax = 36.51696790399669 
@@ -59,7 +59,7 @@ item []:
         intervals [12]:
             xmin = 50.34170569832028 
             xmax = 50.644769978894885 
-            text = "bate" 
+            text = "bata" 
         intervals [13]:
             xmin = 50.644769978894885 
             xmax = 53.18704591841445 
@@ -74,10 +74,10 @@ item []:
             text = "" 
         intervals [16]:
             xmin = 55.978118883446434 
-            xmax = 56.50395602324869 
-            text = "saque" 
+            xmax = 56.45945927951654 
+            text = "saco" 
         intervals [17]:
-            xmin = 56.50395602324869 
+            xmin = 56.45945927951654 
             xmax = 59.294679028919994 
             text = "" 
         intervals [18]:
@@ -99,7 +99,7 @@ item []:
         intervals [22]:
             xmin = 65.64787051246269 
             xmax = 66.0659866207603 
-            text = "bote" 
+            text = "bota" 
         intervals [23]:
             xmin = 66.0659866207603 
             xmax = 69.21917729518154 
@@ -107,7 +107,7 @@ item []:
         intervals [24]:
             xmin = 69.21917729518154 
             xmax = 69.48724131273447 
-            text = "toque" 
+            text = "toca" 
         intervals [25]:
             xmin = 69.48724131273447 
             xmax = 72.40012698216476 
@@ -275,7 +275,7 @@ item []:
         intervals [66]:
             xmin = 144.63357188433602 
             xmax = 145.1366150473033 
-            text = "pato" 
+            text = "vato" 
         intervals [67]:
             xmin = 145.1366150473033 
             xmax = 148.58336716569394 
@@ -283,7 +283,7 @@ item []:
         intervals [68]:
             xmin = 148.58336716569394 
             xmax = 149.04800735383944 
-            text = "vate" 
+            text = "bate" 
         intervals [69]:
             xmin = 149.04800735383944 
             xmax = 152.11164437902974 
@@ -379,7 +379,7 @@ item []:
         intervals [92]:
             xmin = 189.2526677681463 
             xmax = 189.50030647608253 
-            text = "quito" 
+            text = "pica" 
         intervals [93]:
             xmin = 189.50030647608253 
             xmax = 192.13837345395538 
@@ -403,7 +403,7 @@ item []:
         intervals [98]:
             xmin = 198.88611203922116 
             xmax = 199.41012768107575 
-            text = "photo" 
+            text = "vato" 
         intervals [99]:
             xmin = 199.41012768107575 
             xmax = 202.54573885517163 
@@ -515,7 +515,7 @@ item []:
         intervals [126]:
             xmin = 246.41839557381707 
             xmax = 246.74767691509433 
-            text = "toque" 
+            text = "toco" 
         intervals [127]:
             xmin = 246.74767691509433 
             xmax = 249.43423223403929 
@@ -550,12 +550,12 @@ item []:
             text = "toque" 
         intervals [135]:
             xmin = 259.348124017917 
-            xmax = 261.91782684120915 
+            xmax = 261.79420266009674 
             text = "" 
         intervals [136]:
-            xmin = 261.91782684120915 
+            xmin = 261.79420266009674 
             xmax = 262.3084540929359 
-            text = "vete" 
+            text = "veto" 
         intervals [137]:
             xmin = 262.3084540929359 
             xmax = 264.86695030751315 
@@ -619,7 +619,7 @@ item []:
         intervals [152]:
             xmin = 289.0173084826617 
             xmax = 289.41592316169624 
-            text = "base" 
+            text = "baso" 
         intervals [153]:
             xmin = 289.41592316169624 
             xmax = 291.90086625177156 
@@ -1008,10 +1008,10 @@ item []:
             text = "e" 
         intervals [87]:
             xmin = 183.19883192075037 
-            xmax = 186.29820534589746 
+            xmax = 186.28953997966434 
             text = "" 
         intervals [88]:
-            xmin = 186.29820534589746 
+            xmin = 186.28953997966434 
             xmax = 186.48388162509468 
             text = "e" 
         intervals [89]:
