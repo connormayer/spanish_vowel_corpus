@@ -43,7 +43,7 @@ mislabeled <- df_words %>%
 overlabeled <- df_words %>%
   anti_join(mislabeled) %>% # only examine acceptable labels
   group_by(Subject, Word) %>%
-  filter(n() > 2) # Return rows where word is labeled more than twice
+  filter(n() != 2) # Return rows where word is labeled more than twice
                    # or missing label
 
 corrections <- bind_rows(mislabeled, overlabeled) %>%

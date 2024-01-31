@@ -11,7 +11,7 @@ item []:
         name = "words" 
         xmin = 0 
         xmax = 346.4707482993197 
-        intervals: size = 159 
+        intervals: size = 161 
         intervals [1]:
             xmin = 0 
             xmax = 31.06949115151294 
@@ -638,13 +638,21 @@ item []:
             text = "quita" 
         intervals [157]:
             xmin = 316.3284332383324 
-            xmax = 322.47277167351484 
+            xmax = 319.5058140937973 
             text = "" 
         intervals [158]:
+            xmin = 319.5058140937973 
+            xmax = 320.0313445655814 
+            text = "supe" 
+        intervals [159]:
+            xmin = 320.0313445655814 
+            xmax = 322.47277167351484 
+            text = "" 
+        intervals [160]:
             xmin = 322.47277167351484 
             xmax = 323.23933152742865 
             text = "cura" 
-        intervals [159]:
+        intervals [161]:
             xmin = 323.23933152742865 
             xmax = 346.4707482993197 
             text = "" 
@@ -653,7 +661,7 @@ item []:
         name = "vowels" 
         xmin = 0 
         xmax = 346.4707482993197 
-        intervals: size = 159 
+        intervals: size = 161 
         intervals [1]:
             xmin = 0 
             xmax = 31.43008706352699 
@@ -1280,13 +1288,21 @@ item []:
             text = "i" 
         intervals [157]:
             xmin = 316.03702267323825 
-            xmax = 322.7561910655346 
+            xmax = 319.64589784944235 
             text = "" 
         intervals [158]:
+            xmin = 319.64589784944235 
+            xmax = 319.7542963000912 
+            text = "u" 
+        intervals [159]:
+            xmin = 319.7542963000912 
+            xmax = 322.7561910655346 
+            text = "" 
+        intervals [160]:
             xmin = 322.7561910655346 
             xmax = 322.89054887617726 
             text = "u" 
-        intervals [159]:
+        intervals [161]:
             xmin = 322.89054887617726 
             xmax = 346.4707482993197 
             text = "" 
