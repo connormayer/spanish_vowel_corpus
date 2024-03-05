@@ -15,7 +15,7 @@ item []:
         intervals [1]:
             xmin = 0 
             xmax = 39.12402274499997 
-            text = " " 
+            text = "" 
         intervals [2]:
             xmin = 39.12402274499997 
             xmax = 42.01374149659864 

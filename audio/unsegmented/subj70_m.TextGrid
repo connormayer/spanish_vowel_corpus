@@ -275,7 +275,7 @@ item []:
         intervals [66]:
             xmin = 176.27585134723984 
             xmax = 176.86364689474271 
-            text = "beta " 
+            text = "beta" 
         intervals [67]:
             xmin = 176.86364689474271 
             xmax = 180.9685525326772 
@@ -435,7 +435,7 @@ item []:
         intervals [106]:
             xmin = 250.7920103182443 
             xmax = 251.67787383682813 
-            text = "seso " 
+            text = "seso" 
         intervals [107]:
             xmin = 251.67787383682813 
             xmax = 253.9176789288229 

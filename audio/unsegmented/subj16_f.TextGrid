@@ -435,7 +435,7 @@ item []:
         intervals [106]:
             xmin = 254.02884276182596 
             xmax = 254.8553057550461 
-            text = "toque " 
+            text = "toque" 
         intervals [107]:
             xmin = 254.8553057550461 
             xmax = 257.83670733095784 

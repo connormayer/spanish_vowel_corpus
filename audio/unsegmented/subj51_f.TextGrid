@@ -19,7 +19,7 @@ item []:
         intervals [2]:
             xmin = 50.39538648416763 
             xmax = 51.11831423912989 
-            text = "quito " 
+            text = "quito" 
         intervals [3]:
             xmin = 51.11831423912989 
             xmax = 56.01765756126172 
@@ -383,7 +383,7 @@ item []:
         intervals [93]:
             xmin = 206.29028342218635 
             xmax = 208.55460057268317 
-            text = " " 
+            text = "" 
         intervals [94]:
             xmin = 208.55460057268317 
             xmax = 209.15018812071034 

@@ -655,7 +655,7 @@ item []:
         intervals [161]:
             xmin = 281.3293939190534 
             xmax = 317.7650793650794 
-            text = " " 
+            text = "" 
     item [2]:
         class = "IntervalTier" 
         name = "vowels" 
