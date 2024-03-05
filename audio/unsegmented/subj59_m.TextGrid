@@ -139,7 +139,7 @@ item []:
         intervals [32]:
             xmin = 95.19241705869337 
             xmax = 95.72937515238512 
-            text = "toque" 
+            text = "buque" 
         intervals [33]:
             xmin = 95.72937515238512 
             xmax = 98.36234902187937 
@@ -342,12 +342,12 @@ item []:
             text = "coro" 
         intervals [83]:
             xmin = 171.18483073758975 
-            xmax = 173.81115341560258 
+            xmax = 173.7313213858644 
             text = "" 
         intervals [84]:
-            xmin = 173.81115341560258 
+            xmin = 173.7313213858644 
             xmax = 174.31215796864893 
-            text = "cura" 
+            text = "pura" 
         intervals [85]:
             xmin = 174.31215796864893 
             xmax = 176.74403508434276 
@@ -443,7 +443,7 @@ item []:
         intervals [108]:
             xmin = 209.66473852990535 
             xmax = 210.20131482277606 
-            text = "pura " 
+            text = "cura" 
         intervals [109]:
             xmin = 210.20131482277606 
             xmax = 212.8006456776041 
@@ -789,7 +789,7 @@ item []:
         intervals [32]:
             xmin = 95.24854740450556 
             xmax = 95.30779463008732 
-            text = "o" 
+            text = "u" 
         intervals [33]:
             xmin = 95.30779463008732 
             xmax = 98.50903361704454 
