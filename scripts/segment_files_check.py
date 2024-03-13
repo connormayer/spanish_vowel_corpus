@@ -36,7 +36,7 @@ for subj in missing_subj:
                 "Count": found}
             missing_words.append(curr_dict)
 
-pd.DataFrame(missing_words).to_csv(os.path.join(path, "data",
+pd.DataFrame(missing_words).to_csv(os.path.join(path, "Cleanup",
                                                 "missing_TG.csv"),
                                    index = False)
 

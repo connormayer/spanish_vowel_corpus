@@ -11,7 +11,7 @@ item []:
         name = "words" 
         xmin = 0 
         xmax = 1452 
-        intervals: size = 155 
+        intervals: size = 161 
         intervals [1]:
             xmin = 0 
             xmax = 60.64557637420684 
@@ -630,6 +630,30 @@ item []:
             text = "bote" 
         intervals [155]:
             xmin = 412.9354591086434 
+            xmax = 418.11665574283955 
+            text = "" 
+        intervals [156]:
+            xmin = 418.11665574283955 
+            xmax = 418.73131711673926 
+            text = "toco" 
+        intervals [157]:
+            xmin = 418.73131711673926 
+            xmax = 422.93615570168555 
+            text = "" 
+        intervals [158]:
+            xmin = 422.93615570168555 
+            xmax = 423.64435250204826 
+            text = "vete" 
+        intervals [159]:
+            xmin = 423.64435250204826 
+            xmax = 427.8655456895358 
+            text = "" 
+        intervals [160]:
+            xmin = 427.8655456895358 
+            xmax = 428.4752923899326 
+            text = "pica" 
+        intervals [161]:
+            xmin = 428.4752923899326 
             xmax = 1452 
             text = "" 
     item [2]:
@@ -637,7 +661,7 @@ item []:
         name = "vowels" 
         xmin = 0 
         xmax = 1452 
-        intervals: size = 155 
+        intervals: size = 159 
         intervals [1]:
             xmin = 0 
             xmax = 60.77105242654881 
@@ -1256,5 +1280,21 @@ item []:
             text = "o" 
         intervals [155]:
             xmin = 412.56797306544615 
+            xmax = 423.06556879429877 
+            text = "" 
+        intervals [156]:
+            xmin = 423.06556879429877 
+            xmax = 423.20371453110744 
+            text = "e" 
+        intervals [157]:
+            xmin = 423.20371453110744 
+            xmax = 427.93923002551946 
+            text = "" 
+        intervals [158]:
+            xmin = 427.93923002551946 
+            xmax = 428.081563390171 
+            text = "i" 
+        intervals [159]:
+            xmin = 428.081563390171 
             xmax = 1452 
             text = "" 
