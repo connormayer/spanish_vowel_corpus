@@ -2,7 +2,7 @@ File type = "ooTextFile"
 Object class = "TextGrid"
 
 xmin = 0 
-xmax = 312 
+xmax = 312
 tiers? <exists> 
 size = 2 
 item []: 
@@ -10,8 +10,8 @@ item []:
         class = "IntervalTier" 
         name = "words" 
         xmin = 0 
-        xmax = 282 
-        intervals: size = 155 
+        xmax = 312
+        intervals: size = 161 
         intervals [1]:
             xmin = 0 
             xmax = 38.73915395151682 
@@ -630,14 +630,38 @@ item []:
             text = "buque" 
         intervals [155]:
             xmin = 281.49435022350593 
-            xmax = 282 
+            xmax = 283.51674840422083 
+            text = "" 
+        intervals [156]:
+            xmin = 283.51674840422083 
+            xmax = 283.92930475289506 
+            text = "saca" 
+        intervals [157]:
+            xmin = 283.92930475289506 
+            xmax = 286.006829657116 
+            text = "" 
+        intervals [158]:
+            xmin = 286.006829657116 
+            xmax = 286.40444287858594 
+            text = "supe" 
+        intervals [159]:
+            xmin = 286.40444287858594 
+            xmax = 288.5670263344608 
+            text = "" 
+        intervals [160]:
+            xmin = 288.5670263344608 
+            xmax = 289.1355371390205 
+            text = "toque" 
+        intervals [161]:
+            xmin = 289.1355371390205 
+            xmax = 312 
             text = "" 
     item [2]:
         class = "IntervalTier" 
         name = "vowels" 
         xmin = 0 
-        xmax = 282 
-        intervals: size = 155 
+        xmax = 312
+        intervals: size = 161 
         intervals [1]:
             xmin = 0 
             xmax = 38.82854197181635 
@@ -1256,5 +1280,29 @@ item []:
             text = "u" 
         intervals [155]:
             xmin = 281.2675801579448 
-            xmax = 282 
+            xmax = 283.67510364014464 
+            text = "" 
+        intervals [156]:
+            xmin = 283.67510364014464 
+            xmax = 283.77548148772166 
+            text = "a" 
+        intervals [157]:
+            xmin = 283.77548148772166 
+            xmax = 286.1793236281948 
+            text = "" 
+        intervals [158]:
+            xmin = 286.1793236281948 
+            xmax = 286.2670324270485 
+            text = "u" 
+        intervals [159]:
+            xmin = 286.2670324270485 
+            xmax = 288.7375712211207 
+            text = "" 
+        intervals [160]:
+            xmin = 288.7375712211207 
+            xmax = 288.8740071304486 
+            text = "o" 
+        intervals [161]:
+            xmin = 288.8740071304486 
+            xmax = 312 
             text = "" 

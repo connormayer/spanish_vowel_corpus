@@ -15,15 +15,16 @@ import math as m
 
 
 # Set directories
-in_path = "/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/audio/word_segmented"
+path = "/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/"
+in_path = os.path.join(path, "audio", "test_audio")
 os.chdir(in_path)
 
-out_path = "/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/spectrograms/"
+spec_path = os.path.join(path, "spectrograms")
 
 
-if os.path.isdir(out_path):
-    shutil.rmtree(out_path)
-os.mkdir(out_path)
+if os.path.isdir(spec_path):
+    shutil.rmtree(spec_path)
+os.mkdir(spec_path)
 
 
 
@@ -37,6 +38,8 @@ results = process_corpus(corpus_path = in_path,
 print("Processed Corpus")
 
 track_dicts = []
+m_ceil = 200
+f_ceil = 250
 for track in results:
     # Save winner dataframe
     df = track.to_df(which = "winner").to_pandas()
@@ -44,7 +47,7 @@ for track in results:
     midpoint = rows // 2
 
     file = df["file_name"][0]
-    #sound = pm.Sound(os.path.join(in_path,file+".wav"))
+    pitch_ceiling = m_ceil if file.split("_")[2] == 'm' else f_ceil
 
     curr_dict = {}
     curr_dict.update({
@@ -53,11 +56,11 @@ for track in results:
         "Gender": df["file_name"][0].split("_")[1],
         "Vowel": df["label"][0],
         "Word": df["file_name"][0].split("_")[2],
-        "F0": np.mean(track.sound.to_pitch().selected_array["frequency"])
+        "F0": np.mean(track.sound.to_pitch_ac(pitch_ceiling)
+                      .selected_array["frequency"])
         #np.mean(track.sound.to_pitch(pitch_ceiling = 300).selected_array["frequency"])
         })
     #to_pitch_ac()
-    #pitch ceiling for m=200/f=250
 
     for i in range(1, 4):
         fx_df = df["F{}".format(i)]
@@ -79,12 +82,13 @@ for track in results:
     curr_plt.suptitle(file, y=0.95, fontsize=16)
     curr_plt.supxlabel("Time (s)", y=0.04)
     curr_plt.supylabel("Frequency (Hz)", x = 0.05)
-    curr_plt.savefig(out_path+file+'.png')
+    curr_plt.savefig(os.path.join(spec_path, file+'.png'))
     plt.close()
     print(file+" finished")
 
 
 data = pd.DataFrame(track_dicts)
+data.to_csv(os.path.join(path, "data", "ft_results.csv"), index = False)
 breakpoint()
 
 

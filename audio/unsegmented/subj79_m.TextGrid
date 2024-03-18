@@ -10,8 +10,8 @@ item []:
         class = "IntervalTier" 
         name = "words" 
         xmin = 0 
-        xmax = 281 
-        intervals: size = 153 
+        xmax = 311 
+        intervals: size = 161 
         intervals [1]:
             xmin = 0 
             xmax = 71.4577212788389 
@@ -622,14 +622,46 @@ item []:
             text = "voto" 
         intervals [153]:
             xmin = 279.53946404369424 
-            xmax = 281 
+            xmax = 281.36793167379255 
+            text = " " 
+        intervals [154]:
+            xmin = 281.36793167379255 
+            xmax = 281.7907954355985 
+            text = "quito" 
+        intervals [155]:
+            xmin = 281.7907954355985 
+            xmax = 283.8553665763398 
+            text = "" 
+        intervals [156]:
+            xmin = 283.8553665763398 
+            xmax = 284.2969835973218 
+            text = "cuco" 
+        intervals [157]:
+            xmin = 284.2969835973218 
+            xmax = 285.93310434431635 
+            text = "" 
+        intervals [158]:
+            xmin = 285.93310434431635 
+            xmax = 286.5393592897872 
+            text = "seca" 
+        intervals [159]:
+            xmin = 286.5393592897872 
+            xmax = 288.3304886361437 
+            text = "" 
+        intervals [160]:
+            xmin = 288.3304886361437 
+            xmax = 288.84176588358565 
+            text = "vara" 
+        intervals [161]:
+            xmin = 288.84176588358565 
+            xmax = 311 
             text = "" 
     item [2]:
         class = "IntervalTier" 
         name = "vowels" 
         xmin = 0 
-        xmax = 281 
-        intervals: size = 151 
+        xmax = 311 
+        intervals: size = 159 
         intervals [1]:
             xmin = 0 
             xmax = 71.65727115654019 
@@ -1232,5 +1264,37 @@ item []:
             text = "o" 
         intervals [151]:
             xmin = 279.2629578654907 
-            xmax = 281 
+            xmax = 281.47314108717285 
+            text = "" 
+        intervals [152]:
+            xmin = 281.47314108717285 
+            xmax = 281.5777345921423 
+            text = "i" 
+        intervals [153]:
+            xmin = 281.5777345921423 
+            xmax = 283.97932924889614 
+            text = "" 
+        intervals [154]:
+            xmin = 283.97932924889614 
+            xmax = 284.0800489203482 
+            text = "u" 
+        intervals [155]:
+            xmin = 284.0800489203482 
+            xmax = 286.2701655861952 
+            text = "" 
+        intervals [156]:
+            xmin = 286.2701655861952 
+            xmax = 286.3476675087214 
+            text = "e" 
+        intervals [157]:
+            xmin = 286.3476675087214 
+            xmax = 288.59806124966985 
+            text = "" 
+        intervals [158]:
+            xmin = 288.59806124966985 
+            xmax = 288.6686799304382 
+            text = "a" 
+        intervals [159]:
+            xmin = 288.6686799304382 
+            xmax = 311
             text = "" 
