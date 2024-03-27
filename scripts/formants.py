@@ -13,10 +13,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import math as m
 
+#import warnings
+#warnings.filterwarnings("error")
+
 
 # Set directories
 path = "/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/"
-in_path = os.path.join(path, "audio", "test_audio")
+in_path = os.path.join(path, "audio", "vowel_segmented")
 os.chdir(in_path)
 
 spec_path = os.path.join(path, "spectrograms")
@@ -27,16 +30,29 @@ if os.path.isdir(spec_path):
 os.mkdir(spec_path)
 
 
-
+# Collect Formants from Corpus
 results = process_corpus(corpus_path = in_path,
                          entry_classes=['words', 'vowels'],
                          target_tier='vowels', target_labels='[aeiou]',
-                         min_duration=0.02,
+                         min_duration=0,
                          min_max_formant=3000, max_max_formant=7000,
-                         nstep=20, n_formants=5,
+                         nstep=20, n_formants=6,
                          time_step=0.002)
 print("Processed Corpus")
 
+
+# If Empty Function
+def formant_value(df, name, point):
+    value = df.get(name)
+    if value: 
+        add_dict = {name: value.iloc[point]}
+    else:
+        add_dict = {name: None})
+
+    return add_dict
+
+
+# Extract Info and save to df
 track_dicts = []
 m_ceil = 200
 f_ceil = 250
@@ -45,22 +61,22 @@ for track in results:
     df = track.to_df(which = "winner").to_pandas()
     rows = len(df)
     midpoint = rows // 2
-
+    
     file = df["file_name"][0]
+    file_split = file.split("_")
+    print(file)
     pitch_ceiling = m_ceil if file.split("_")[2] == 'm' else f_ceil
 
     curr_dict = {}
     curr_dict.update({
         "Filename": file,
-        "Subject": df["file_name"][0].split("_")[0],
-        "Gender": df["file_name"][0].split("_")[1],
-        "Vowel": df["label"][0],
-        "Word": df["file_name"][0].split("_")[2],
+        "Subject": file_split[1],
+        "Gender": file_split[2],
+        "Vowel": file_split[0],
+        "Word": file_split[3],
         "F0": np.mean(track.sound.to_pitch_ac(pitch_ceiling)
                       .selected_array["frequency"])
-        #np.mean(track.sound.to_pitch(pitch_ceiling = 300).selected_array["frequency"])
         })
-    #to_pitch_ac()
 
     for i in range(1, 4):
         fx_df = df["F{}".format(i)]
@@ -70,10 +86,11 @@ for track in results:
                                      x, method = "nearest")]
             for x in range(10,100,10)
             })
-    curr_dict.update({
-        "F4": df["F4"].iloc[midpoint],
-        "Duration": track.sound.duration
-        })
+
+    curr_dict.update({"F4": df["F4"].iloc[midpoint],
+                      "Duration": track.sound.duration})
+    
+
     track_dicts.append(curr_dict)
 
     # Spectrogram Plot
@@ -84,7 +101,6 @@ for track in results:
     curr_plt.supylabel("Frequency (Hz)", x = 0.05)
     curr_plt.savefig(os.path.join(spec_path, file+'.png'))
     plt.close()
-    print(file+" finished")
 
 
 data = pd.DataFrame(track_dicts)
@@ -95,24 +111,24 @@ breakpoint()
                                                                                      
 
 
-
-
-
+'''
+f4 = df.get("F4")
+    if f4: 
+        curr_dict.update({
+            "F4": f4.iloc[midpoint],
+            })
+    else:
+        curr_dict.update({
+            "F4": None})
+        
+    curr_dict.update({
+            "Duration": track.sound.duration
+            })
 '''
 
-    
-    #file_df = results[0].to_df(which = "all").to_pandas()
-    #file_df = file_df[["F1", "F2", "F3", "F4", "max_formant", "time"]]
-    #itvl = m.floor(file_df.shape[0]/10)
-
-    #for i in range(10):
-        #pd.DataFrame({'':[]})
-
-subj14_m_    _saque_0.TextGrid
-subj14_m_    _saque_0.wav
-
-subj19_f_quite_  _saca_261.TextGrid
-subj19_f_quite_  _saca_261.wav
 
 
-'''
+
+
+
+
