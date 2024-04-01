@@ -20,6 +20,7 @@ import math as m
 # Set directories
 path = "/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/"
 in_path = os.path.join(path, "audio", "vowel_segmented")
+#in_path = os.path.join(path, "audio", "test_audio")
 os.chdir(in_path)
 
 spec_path = os.path.join(path, "spectrograms")
@@ -36,18 +37,18 @@ results = process_corpus(corpus_path = in_path,
                          target_tier='vowels', target_labels='[aeiou]',
                          min_duration=0,
                          min_max_formant=3000, max_max_formant=7000,
-                         nstep=20, n_formants=6,
+                         nstep=20, n_formants=5,
                          time_step=0.002)
 print("Processed Corpus")
 
 
 # If Empty Function
 def formant_value(df, name, point):
-    value = df.get(name)
+    value = name in df.columns
     if value: 
-        add_dict = {name: value.iloc[point]}
+        add_dict = {name: df[name].iloc[point]}
     else:
-        add_dict = {name: None})
+        add_dict = {name: None}
 
     return add_dict
 
@@ -85,10 +86,9 @@ for track in results:
             fx_df.iloc[np.percentile(range(rows),
                                      x, method = "nearest")]
             for x in range(10,100,10)
-            })
-
-    curr_dict.update({"F4": df["F4"].iloc[midpoint],
-                      "Duration": track.sound.duration})
+            })    
+    curr_dict.update(formant_value(df, "F4", midpoint))
+    curr_dict.update({"Duration": track.sound.duration})
     
 
     track_dicts.append(curr_dict)
