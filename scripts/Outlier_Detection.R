@@ -6,15 +6,17 @@ library(tidyverse, warn.conflicts = FALSE)
 # Import the CSV (exported from Praat) and subset it. Create Vowel & Word lists
 # for data clean up.
 
-setwd("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/data")
-df <- read_csv("results.csv", 
+path <- "/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus"
+setwd(file.path(path, "data"))
+df <- read_csv("ft_results.csv", 
                na=c("","NA", "--undefined--")) # Data has missing entries
                                              # na sets all entries as NA values
 df_50 <- df %>%
   select(Filename, Subject, Vowel, Word, F0, ends_with("_50"), F4, Duration)
   # Pick main parameters
 
-word_list <- read_csv("subject-1.csv") %>%
+sub_ord_path <- file.path(path, "audio", "subject_orderings")
+word_list <- read_csv(file.path(sub_ord_path, "subject-1.csv")) %>%
   pull(word) %>%
   unique(.) %>%
   tolower(.) # Create unique list of words to compare with data
@@ -25,9 +27,8 @@ vowel_list <- c("a","e","i","o","u")
 # PART II: Outliers
 # Create local folder to store the (eventual) outliers CSVs.
 
-#setwd("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/")
 #dir.create("Cleanup")
-setwd("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/Cleanup")
+setwd(file.path(path, "Cleanup"))
 
 # PART II A: Mislabeled Measurements
 # Identify mislabeled tokens.
@@ -35,20 +36,12 @@ setwd("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/Cleanup")
 df_words <- df_50 %>%
   select(Filename, Subject, Vowel, Word)
 
-mislabeled <- df_words %>%
+df_words %>%
   filter(!Word %in% word_list | 
-           !Vowel %in% vowel_list)
+           !Vowel %in% vowel_list) %>%
+  arrange(Subject, Word) %>%
+  write_csv("mislabeled.csv")
   # Check for "words" which don't match the word list
-
-overlabeled <- df_words %>%
-  anti_join(mislabeled) %>% # only examine acceptable labels
-  group_by(Subject, Word) %>%
-  filter(n() != 2) # Return rows where word is labeled more than twice
-                   # or missing label
-
-corrections <- bind_rows(mislabeled, overlabeled) %>%
-  arrange(Subject, Word) #%>%
-  #write_csv("Corrections.csv")
   
 
 # PART II B: NA Measurements
