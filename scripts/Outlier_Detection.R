@@ -36,11 +36,11 @@ setwd(file.path(path, "Cleanup"))
 df_words <- df_50 %>%
   select(Filename, Subject, Vowel, Word)
 
-df_words %>%
+mislabeled <- df_words %>%
   filter(!Word %in% word_list | 
            !Vowel %in% vowel_list) %>%
-  arrange(Subject, Word) %>%
-  write_csv("mislabeled.csv")
+  arrange(Subject, Word) #%>%
+  # write_csv("mislabeled.csv")
   # Check for "words" which don't match the word list
   
 
@@ -55,7 +55,9 @@ df_50_dropped <- df_50 %>%
   anti_join(na_values, by='Filename') %>%
   anti_join(mislabeled, by='Filename') %>%
   subset(select = -Word) %>%
-  write_csv("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/data/results_modified.csv")
+  write_csv(file.path(path, 
+                      "data", 
+                      "ft_results_modified.csv"))
   # Drop data with missing & mislabeled entries
   # Will examine that data separately
   
@@ -83,7 +85,7 @@ formant_outliers <- df_50_norm%>%
     # Pick up rows where any of the Formant values are abnormal
   select(Filename, Subject, Vowel, F1_50, Z_F1_50,
          F2_50, Z_F2_50, F3_50, Z_F3_50, F4, Z_F4) %>% 
-            # Keep formant columns 
+            # Keep formant columns  
   write_csv("Formant_Outliers.csv")
 
 duration_outliers <- df_50_norm %>%
