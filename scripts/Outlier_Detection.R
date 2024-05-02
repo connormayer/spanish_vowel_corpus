@@ -49,7 +49,7 @@ mislabeled <- df_words %>%
 na_values <- df_50 %>% 
   filter(if_any(4:ncol(df_50), is.na)) %>% # Pick up the rows which have 
                                            # NA value(s) in any column 4+
-  write_csv("NA_Values.csv") # Then save these rows in a csv
+  write_csv("NA_values.csv") # Then save these rows in a csv
 
 df_50_dropped <- df_50 %>%
   anti_join(na_values, by='Filename') %>%
@@ -78,7 +78,8 @@ z_score <- 2.5 # Value for outlier detection, can raise/lower as needed
 pitch_outliers <- df_50_norm %>%
   filter(abs(Z_F0)>=z_score) %>% #pick up rows with abnormal z-score
   select(Filename, Subject, Vowel, F0, Z_F0) %>% #save only categorical & F0 column
-  write_csv("Pitch_Outliers.csv") # And all data in a CSV file
+  add_column("Correction" = NA) %>%
+  write_csv("pitch_outliers.csv") # And all data in a CSV file
 
 formant_outliers <- df_50_norm%>%
   filter(if_any(Z_F1_50:Z_F4, ~ abs(.) >= z_score)) %>% 
@@ -86,10 +87,10 @@ formant_outliers <- df_50_norm%>%
   select(Filename, Subject, Vowel, F1_50, Z_F1_50,
          F2_50, Z_F2_50, F3_50, Z_F3_50, F4, Z_F4) %>% 
             # Keep formant columns  
-  write_csv("Formant_Outliers.csv")
+  write_csv("formant_outliers.csv")
 
 duration_outliers <- df_50_norm %>%
   filter(abs(Z_Duration)>=z_score) %>%
   select(Filename, Subject, Vowel, Duration, Z_Duration) %>%
-  write_csv("Duration_Outliers.csv")
+  write_csv("duration_outliers.csv")
 
