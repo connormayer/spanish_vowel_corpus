@@ -106,7 +106,7 @@ for track in results:
 
     track_dicts.append(curr_dict)
 
-    '''
+
     # Spectrogram Plot
     track.spectrograms()
     curr_plt = plt.gcf()
@@ -115,10 +115,9 @@ for track in results:
     curr_plt.supylabel("Frequency (Hz)", x = 0.05)
     curr_plt.savefig(os.path.join(spec_path, file+'.png'))
     plt.close()
-    '''
 
 data = pd.DataFrame(track_dicts)
-data.to_csv(os.path.join(path, "data", "ft_results_x.csv"), index = False)
+data.to_csv(os.path.join(path, "data", "ft_results.csv"), index = False)
 
 
 
