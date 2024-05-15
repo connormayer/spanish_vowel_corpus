@@ -8,7 +8,7 @@ library(tidyverse, warn.conflicts = FALSE)
 
 path <- "/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus"
 setwd(file.path(path, "data"))
-df <- read_csv("ft_results.csv", 
+df <- read_csv("ft_results_corrected.csv", 
                na=c("","NA", "--undefined--")) # Data has missing entries
                                              # na sets all entries as NA values
 df_50 <- df %>%
@@ -57,7 +57,7 @@ df_50_dropped <- df_50 %>%
   subset(select = -Word) %>%
   write_csv(file.path(path, 
                       "data", 
-                      "ft_results_modified.csv"))
+                      "ft_results_50.csv"))
   # Drop data with missing & mislabeled entries
   # Will examine that data separately
   
@@ -75,13 +75,20 @@ df_50_norm <- df_50_dropped %>%
 
 z_score <- 2.5 # Value for outlier detection, can raise/lower as needed
 
+# Pitch
 pitch_outliers <- df_50_norm %>%
   filter(abs(Z_F0)>=z_score) %>% #pick up rows with abnormal z-score
   select(Filename, Subject, Vowel, F0, Z_F0) %>% #save only categorical & F0 column
-  add_column("Correction" = NA) %>%
+  add_column("Correction" = 0)
+
+pitch_outliers_corrected <- read.csv("pitch_outliers_corrected.csv") %>%
+  filter(Correction %in% c("-", NA))
+  
+pitch_outliers %>% anti_join(pitch_outliers_corrected, by='Filename') %>%  
   write_csv("pitch_outliers.csv") # And all data in a CSV file
 
-formant_outliers <- df_50_norm%>%
+# Formants
+formant_outliers <- df_50_norm %>%
   filter(if_any(Z_F1_50:Z_F4, ~ abs(.) >= z_score)) %>% 
     # Pick up rows where any of the Formant values are abnormal
   select(Filename, Subject, Vowel, F1_50, Z_F1_50,
