@@ -22,10 +22,12 @@ df = pd.read_csv(csv_path)
 
 #'''
 # PART II: MOVE FILES
-def move_files(filename, move_path):
+def move_files(filename, move_path, is_mix = False):
     filetypes = [".TextGrid", ".wav", ".png"]
     type_paths = [audio_path, audio_path, spec_path] # corresponding path
     n = len(type_paths)
+    if not is_mix:
+        n=n-1
 
     for i in range(n):
         file_full = filename + filetypes[i]
@@ -38,6 +40,7 @@ neg_list = []
 mix_list = []
 
 for index, row in df.iterrows():
+    is_mix = False
     filename = df["Filename"][index]
     row_dict = row.to_dict()
 
@@ -54,8 +57,9 @@ for index, row in df.iterrows():
     else:
         mix_list.append(row_dict)
         move_path = move_paths[2]
+        is_mix = True
 
-    move_files(filename, move_path)
+    move_files(filename, move_path,is_mix)
     
 pd.DataFrame(pos_list).to_csv(os.path.join(move_paths[0],
                                            "0pos_formant_outliers.csv"),
