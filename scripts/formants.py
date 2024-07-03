@@ -96,6 +96,7 @@ def get_results(corpus_path, results_name,
         file_split = file.split("_")
         vowel = file_split[0]
         subj = file_split[1]
+        gender = file_split[2]
         print(file)
         pitch_ceiling = m_ceil if file.split("_")[2] == 'm' else f_ceil
 
@@ -103,7 +104,7 @@ def get_results(corpus_path, results_name,
         results_dict.update({
             "Filename": file,
             "Subject": subj,
-            "Gender": file_split[2],
+            "Gender": gender,
             "Vowel": vowel,
             "Word": file_split[3],
             "F0": np.mean(track.sound.to_pitch_ac(pitch_ceiling)
@@ -130,8 +131,9 @@ def get_results(corpus_path, results_name,
         if hist_name:
             hist_dict = {}
             hist_dict.update({"Subject": subj,
+                              "Gender": gender,
                               "Vowel": vowel,
-                              "Max Formant": df["max_formant"][0]})
+                              "Max_Formant": df["max_formant"][0]})
             hist_dicts_list.append(hist_dict)
         
 

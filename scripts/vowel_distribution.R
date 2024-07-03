@@ -36,19 +36,26 @@ f_prob(800, "m", "a", "F1") # example
 # Histograms
 mf_df <- read_csv("max_formants.csv")
 subj_list <- mf_df %>% pull(Subject) %>% unique(.) 
-subj_list = subj_list[1]
+
+setwd(file.path(path, "histograms"))
 for (subj in subj_list){
-  subj_df <- mf_df %>%
+  mf_df %>%
     filter(Subject == subj) %>%
-    filter(Vowel == "a") %>%
-    select(-Subject)
+      ggplot(aes(x=Max_Formant), color = Vowel) +
+      geom_histogram(bins=8, aes(y = after_stat(density))) +
+      geom_density(lwd = .75, linetype = 1, color = "red") +
+      facet_grid(Vowel ~ .) +
+      theme_bw() +
+      theme(panel.background = element_rect(fill = "white")) + 
+      labs(title = sprintf("Count of Max Formants for %s", str_to_title(subj)),
+           x = "Max Formant Measurement",
+           y = "Density")
   
-  subj_df %>%
-    ggplot(aes(x="Max Formant")) +
-    geom_histogram(color = "black", bins = 20, alpha = 0.7, stat="count") +
-    #labs(title = ) +
-    theme_minimal()
+  ggsave(sprintf("%s_histogram.png", subj), width = 4, height = 5, units = "in")
 }
 
-mf_df %>% group_by(Subject) %>% summarize(median(`Max Formant`))
+mf_df %>% 
+  group_by(Gender,Subject) %>% 
+  summarize(Mean = mean(Max_Formant), 
+            Median = median(Max_Formant))
 

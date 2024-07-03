@@ -33,7 +33,7 @@ for subj in missing_subj:
             curr_dict = {
                 "Subject": subj,
                 "Word": word,
-                "Count": found}
+                "Count": 4-found}
             missing_words.append(curr_dict)
 
 pd.DataFrame(missing_words).to_csv(os.path.join(path, "Cleanup",

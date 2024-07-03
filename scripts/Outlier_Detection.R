@@ -96,8 +96,29 @@ formant_outliers <- df_50_norm %>%
             # Keep formant columns  
   write_csv("formant_outliers.csv")
 
+# Duration 
 duration_outliers <- df_50_norm %>%
   filter(abs(Z_Duration)>=z_score) %>%
   select(Filename, Subject, Vowel, Duration, Z_Duration) %>%
   write_csv("duration_outliers.csv")
+
+# Plots of Outliers
+f_out_counts <- formant_outliers %>%
+  select(-c(starts_with('F'), "Z_F4")) %>%
+  pivot_longer(!c(Subject, Vowel), 
+               names_to = "Formant", values_to = "Z") %>%
+  mutate(Formant = str_replace(Formant, "Z_", ""),
+         Subject = str_replace(Subject, "subj", "")) %>%
+  filter(abs(Z) >= z_score) %>%
+  group_by(Subject, Vowel, Formant) %>%
+  summarize(Count = n()) %>%
+  mutate(Subject = as.numeric(Subject)) %>%
+  arrange(Subject)
+  
+f_out_counts %>%  
+  ggplot(aes(x = Subject)) +
+  geom_bar() +
+  facet_grid(Formant ~ ., scales='free_x') +
+  scale_x_continuous(breaks = round(seq(min(0), max(81), by = 10),0)) +
+  labs(title = "Counts of Formant Outliers by Subject")
 
