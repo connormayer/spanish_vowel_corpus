@@ -97,7 +97,7 @@ def get_results(corpus_path, results_name,
         vowel = file_split[0]
         subj = file_split[1]
         gender = file_split[2]
-        print(file)
+        #print(file)
         pitch_ceiling = m_ceil if file.split("_")[2] == 'm' else f_ceil
 
         results_dict = {}
@@ -127,7 +127,7 @@ def get_results(corpus_path, results_name,
         curr_plt.supylabel("Frequency (Hz)", x = 0.05)
         curr_plt.savefig(os.path.join(spec_path, file+'.png'))
         plt.close()
-        '''
+        
         if hist_name:
             hist_dict = {}
             hist_dict.update({"Subject": subj,
@@ -135,46 +135,49 @@ def get_results(corpus_path, results_name,
                               "Vowel": vowel,
                               "Max_Formant": df["max_formant"][0]})
             hist_dicts_list.append(hist_dict)
+        '''
         
 
     data = pd.DataFrame(result_dicts_list)
     data.to_csv(os.path.join(data_path, results_name), index = False)
 
+    '''
     if hist_name:
         hist_data = pd.DataFrame(hist_dicts_list)
         hist_data.to_csv(os.path.join(data_path, hist_name), index = False)
+    '''
 
-        breakpoint()
-
+'''
 # Whole Corpus
 get_results(corpus_path= in_path,
             results_name = "ft_results.csv",
             hist_name = "max_formants.csv",
             spec_path = spec_path)
+
+
+
+
 '''
 
 # Pos/Neg Outliers
-pos_max = 6000
-neg_min = 4000
 
 pos_path = os.path.join(fof_path, "pos")
 neg_path = os.path.join(fof_path, "neg")
-get_results(corpus_path = pos_path,
-            results_name = "0pos_formant_outliers_corrections.csv",
-            data_path = pos_path,
-            max_max_formant = pos_max)
 
-get_results(corpus_path = neg_path,
-            results_name = "0neg_formant_outliers_corrections.csv",
-            data_path = neg_path,
-            min_max_formant = neg_min)
-'''
+for pos_max in range(7000, 5000, -500):
+    get_results(corpus_path = pos_path,
+                results_name = "0pos_formant_outliers_{}.csv".format(str(pos_max)),
+                data_path = pos_path,
+                max_max_formant = pos_max)
+
+for neg_min in range(3000, 5000, 500):
+    get_results(corpus_path = neg_path,
+                results_name = "0neg_formant_outliers_{}.csv".format(str(neg_min)),
+                data_path = neg_path,
+                min_max_formant = neg_min)
 
 print("done")
 breakpoint()
-
-
-
 
 
 
