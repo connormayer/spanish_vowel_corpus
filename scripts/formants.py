@@ -118,8 +118,9 @@ def get_results(corpus_path, results_name,
         results_dict.update({"Duration": track.sound.duration})
         
         result_dicts_list.append(results_dict)
-        '''
+        
         # Spectrogram Plot
+        '''
         track.spectrograms()
         curr_plt = plt.gcf()
         curr_plt.suptitle(file, y=0.95, fontsize=16)
@@ -145,7 +146,7 @@ def get_results(corpus_path, results_name,
     if hist_name:
         hist_data = pd.DataFrame(hist_dicts_list)
         hist_data.to_csv(os.path.join(data_path, hist_name), index = False)
-    '''
+   '''
 
 '''
 # Whole Corpus
@@ -164,17 +165,18 @@ get_results(corpus_path= in_path,
 pos_path = os.path.join(fof_path, "pos")
 neg_path = os.path.join(fof_path, "neg")
 
-for pos_max in range(7000, 5000, -500):
+for pos_max in range(7000, 3500, -500):
     get_results(corpus_path = pos_path,
                 results_name = "0pos_formant_outliers_{}.csv".format(str(pos_max)),
                 data_path = pos_path,
                 max_max_formant = pos_max)
 
-for neg_min in range(3000, 5000, 500):
+for neg_min in range(3000, 6500, 500):
     get_results(corpus_path = neg_path,
                 results_name = "0neg_formant_outliers_{}.csv".format(str(neg_min)),
                 data_path = neg_path,
                 min_max_formant = neg_min)
+#'''
 
 print("done")
 breakpoint()

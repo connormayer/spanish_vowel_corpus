@@ -19,7 +19,6 @@ move_paths = [os.path.join(fof_path, folder) for folder in folders]
 
 df = pd.read_csv(csv_path)
 
-
 #'''
 # PART II: MOVE FILES
 def move_files(filename, move_path, is_mix = False):
@@ -84,6 +83,10 @@ for move_path in move_paths:
             dest = os.path.join(audio_path, file)
             
         shutil.move(source, dest)
+
+
+
+        
 
 #'''
 

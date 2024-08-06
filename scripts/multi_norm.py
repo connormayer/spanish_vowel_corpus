@@ -7,18 +7,25 @@ from scipy.stats import multivariate_normal
 
 # Initialize
 repo = '/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus'
-data_path = os.path.join(repo, "data")
-fof_path = os.path.join(repo, "Cleanup",
-                                   "formant_outlier_files")
+data_path = os.path.join(repo, 'data')
+cl_path = os.path.join(repo, 'Cleanup')
+fof_path = os.path.join(cl_path, 'formant_outlier_files')
 
 
+# Read Data and Outlier CSVs
 df = pd.read_csv(os.path.join(data_path,
                               'ft_results.csv'))
-df = df[['Subject', 'Vowel',
-         'F1_50', 'F2_50',
-         'F3_50', 'F4']]
+df = df[['Filename','Subject', 'Vowel',
+         'F1_50', 'F2_50', 'F3_50']]
 
-# Calculate Vector Means and Covariance Matrix
+out_df = pd.read_csv(os.path.join(cl_path,
+                                  'formant_outliers.csv')
+                     )[['Filename']]
+
+df = df[~df.Filename.isin(out_df)] # only consider "good" measurements
+
+        
+# Calculate Vector Means and Covariance Matrix 
 vals = {}
 for subj_num in range(81):
     s_vals = {}
@@ -28,23 +35,22 @@ for subj_num in range(81):
     for vowel in ['a','e','i','o','u']:
         s_v_df = s_df[s_df['Vowel'].isin([vowel])]
         means = np.array([np.mean(s_v_df[[formant]])
-                          for formant in ['F1_50', 'F2_50',
-                                          'F3_50', 'F4']])
-        cov = np.cov(np.transpose(s_v_df.drop(columns = ['Subject',
+                          for formant in ['F1_50', 'F2_50','F3_50']])
+        cov = np.cov(np.transpose(s_v_df.drop(columns = ['Filename',
+                                                         'Subject',
                                                          'Vowel'])))
-        '''
-        if np.isnan(cov).any():
-            breakpoint()
+
         eigenvalues = np.linalg.eigvals(cov)
         if np.any(eigenvalues < 0):
             print("The matrix for {} vowel {} is not SPD".format(subj_str, vowel))
-        '''
+
         v_vals = {'means': means, 'cov': cov}
-        s_vals.update({vowel: v_vals})
+        s_vals.update({vowel: vs_vals})
 
     vals.update({subj_str: s_vals})
 
-
+breakpoint()
+'''
 
 # Calculate Probability
 pos_path = os.path.join(fof_path, "pos")
@@ -57,7 +63,7 @@ pos_dfs = [pd.read_csv(os.path.join(pos_path,
                                     "0pos_formant_outliers_{}.csv".format(x)
                                     )
                        ).set_index('Filename')
-           for x in range(7000, 5000, -500)]
+           for x in range(7000, 4000, -500)]
 
 
 curr_subj = None
@@ -79,6 +85,7 @@ for _, row in pos_out.iterrows():
 
     # calculate probability based on speaker
     probs = [dist.pdf(formant) for formant in df_formants]
+    breakpoint()
     # save correct prob
     df_index = probs.index(max(probs))
     
