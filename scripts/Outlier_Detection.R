@@ -81,10 +81,11 @@ pitch_outliers <- df_50_norm %>%
   select(Filename, Subject, Vowel, F0, Z_F0) %>% #save only categorical & F0 column
   add_column("Correction" = 0)
 
-pitch_outliers_corrected <- read.csv("pitch_outliers_corrected.csv") %>%
+pitch_outliers_corrected <- read_csv("pitch_outliers_corrected.csv") %>%
   filter(Correction %in% c("-", NA))
   
-pitch_outliers %>% anti_join(pitch_outliers_corrected, by='Filename') %>%  
+pitch_outliers %>% 
+  anti_join(pitch_outliers_corrected, by='Filename') %>%  
   write_csv("pitch_outliers.csv") # And all data in a CSV file
 
 # Formants
@@ -92,9 +93,14 @@ formant_outliers <- df_50_norm %>%
   filter(if_any(Z_F1_50:Z_F4, ~ abs(.) >= z_score)) %>% 
     # Pick up rows where any of the Formant values are abnormal
   select(Filename, Subject, Vowel, F1_50, Z_F1_50,
-         F2_50, Z_F2_50, F3_50, Z_F3_50, F4, Z_F4) %>% 
+         F2_50, Z_F2_50, F3_50, Z_F3_50, F4, Z_F4) 
             # Keep formant columns  
-  write_csv("formant_outliers.csv")
+
+formant_outliers_corrected <- read_csv("formant_outlier_files/formant_outliers_corrected.csv")
+
+formant_outliers <- formant_outliers %>% 
+  anti_join(formant_outliers_corrected, by='Filename') %>%  
+  write_csv("formant_outliers.csv") # And all data in a CSV file
 
 # Duration 
 duration_outliers <- df_50_norm %>%

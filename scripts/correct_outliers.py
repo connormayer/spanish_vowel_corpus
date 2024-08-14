@@ -24,7 +24,7 @@ df = results.merge(pitch, on="Filename", how="left")
 df["F0"] = df["Correction"].fillna(df["F0"])
     # Replace F0 with Correction values, if none, take original F0 val
 df.drop(columns=["Correction"], inplace=True)
-df.set_index('Filename')
+df = df.set_index('Filename')
 
 
 # Correct Formant Outliers
@@ -38,7 +38,7 @@ form = form.drop(columns = ["Subject", "Gender", "Vowel", "Word",
 
 df.update(form)
 df = df.reset_index()
-    
+
 
 # Save CSV
 df.to_csv(os.path.join(repo,
