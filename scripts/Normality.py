@@ -1,16 +1,8 @@
 import os
 
-import numpy as np
 import pandas as pd
 import statsmodels.api as sm
-import scipy.stats as stats
 import matplotlib.pyplot as plt
-
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-from sklearn.model_selection import RepeatedStratifiedKFold
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import GridSearchCV
 
 os.chdir("/Users/meganlwe/Documents/GitHub/spanish_vowel_corpus/data")
 df = pd.read_csv("results_modified.csv")
@@ -22,7 +14,6 @@ x_values = df.drop(["Filename", "Subject", "Vowel"], 1)
 y_values = df["Vowel"]
 
 
-'''
 ## Visualizations for Normality
 titles = list(x_values.columns)
     # Create list from pd df column names to use as plot titles.
@@ -59,28 +50,6 @@ plt.tight_layout()
 
 plt.show()
 
-'''
-
-
-## Define models
-models_list = [LinearDiscriminantAnalysis(), QuadraticDiscriminantAnalysis()]
-
-k_fold = RepeatedStratifiedKFold(n_splits=10, # num of k-folds
-                                     n_repeats=10
-                                         # num of repeats of 10-folds
-                                     )
-
-for model in models_list:
-    model.fit(x_values, y_values)
-
-    scores = cross_val_score(model,
-                             x_values,
-                             y_values,
-                             cv = k_fold, # Cross validation splitting strategy
-                             n_jobs = -1 # Jobs use all processors
-                             )
-
-    print(f'Total score for {model} is {np.mean(scores)}')
     
 
 
