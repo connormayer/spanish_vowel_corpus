@@ -109,10 +109,16 @@ for out_type in ["pos", "neg"]:
         corrections += [row_dict]
 
 corrections_df = pd.DataFrame(corrections)
-corrections_df.to_csv(os.path.join(fof_path, "formant_outliers_corrected.csv"), index = False)
+corrections_df.to_csv(os.path.join(fof_path, "formant_outliers_corrected.csv"),
+                      mode = 'a',
+                      index = False,
+                      header = False)
 
 formant_ranges_df = pd.DataFrame(formant_ranges)
-formant_ranges_df.to_csv(os.path.join(fof_path, "formant_ranges.csv"), index = False)
+formant_ranges_df.to_csv(os.path.join(fof_path, "formant_ranges.csv"),
+                         mode = 'a',
+                         index = False,
+                         header = False)
 
 
 breakpoint()

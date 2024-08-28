@@ -98,7 +98,7 @@ formant_outliers <- df_50_norm %>%
 
 formant_outliers_corrected <- read_csv("formant_outlier_files/formant_outliers_corrected.csv")
 
-formant_outliers <- formant_outliers %>% 
+formant_outliers_new <- formant_outliers %>% 
   anti_join(formant_outliers_corrected, by='Filename') %>%  
   write_csv("formant_outliers.csv") # And all data in a CSV file
 

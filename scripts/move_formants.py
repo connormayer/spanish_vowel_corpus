@@ -19,6 +19,7 @@ move_paths = [os.path.join(fof_path, folder) for folder in folders]
 
 df = pd.read_csv(csv_path)
 
+
 #'''
 # PART II: MOVE FILES
 def move_files(filename, move_path, is_mix = False):
@@ -69,25 +70,34 @@ pd.DataFrame(neg_list).to_csv(os.path.join(move_paths[1],
 pd.DataFrame(mix_list).to_csv(os.path.join(move_paths[2],
                                            "0mix_formant_outliers.csv"),
                               index = False)
+print('done')
 
 '''
 # Part III: MOVE BACK
 
 for move_path in move_paths:
-    filenames = [name for name in os.listdir(move_path) if not name.endswith(".csv")]
+    #filenames = [name for name in os.listdir(move_path) if not name.endswith(".csv")]
+    filenames = [name for name in os.listdir(move_path)]
     for file in filenames:
         source = os.path.join(move_path, file)
-        if file.endswith("g"):
-            dest = os.path.join(spec_path, file)
+        if file.endswith("g") or file.endswith(".csv"):
+            #dest = os.path.join(spec_path, file)
+            #shutil.move(source, dest)
+            os.remove(source)
         else:
             dest = os.path.join(audio_path, file)
-            
-        shutil.move(source, dest)
-
-
-
-        
-
+            shutil.move(source, dest)
+print('done')
 #'''
 
+
+
 breakpoint()
+
+
+
+
+
+
+
+
