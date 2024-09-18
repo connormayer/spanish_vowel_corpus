@@ -129,6 +129,7 @@ def get_results(corpus_path, results_name,
         curr_plt.savefig(os.path.join(spec_path, file+'.png'))
         plt.close()
         
+        
         if hist_name:
             hist_dict = {}
             hist_dict.update({"Subject": subj,
@@ -164,17 +165,18 @@ get_results(corpus_path= in_path,
 
 pos_path = os.path.join(fof_path, "pos")
 neg_path = os.path.join(fof_path, "neg")
+mix_path = os.path.join(fof_path, "mix")
 
 for pos_max in range(7000, 3500, -500):
-    get_results(corpus_path = pos_path,
+    get_results(corpus_path = mix_path,
                 results_name = "0pos_formant_outliers_{}.csv".format(str(pos_max)),
-                data_path = pos_path,
+                data_path = mix_path,
                 max_max_formant = pos_max)
 
 for neg_min in range(3000, 6500, 500):
-    get_results(corpus_path = neg_path,
+    get_results(corpus_path = mix_path,
                 results_name = "0neg_formant_outliers_{}.csv".format(str(neg_min)),
-                data_path = neg_path,
+                data_path = mix_path,
                 min_max_formant = neg_min)
 #'''
 

@@ -42,7 +42,15 @@ mislabeled <- df_words %>%
   arrange(Subject, Word) #%>%
   # write_csv("mislabeled.csv")
   # Check for "words" which don't match the word list
+
+misvoweled <- df_words %>%
+  filter(Vowel != ifelse(substring(Word,1,2) == "qu",
+                         substring(Word,3,3),
+                         substring(Word,2,2))) %>%
+  arrange(Subject, Word) %>%
+  write_csv("misvoweled.csv")
   
+
 
 # PART II B: NA Measurements
 # Identify NA values within data. 

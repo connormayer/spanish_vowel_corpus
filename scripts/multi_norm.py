@@ -50,6 +50,7 @@ for subj_num in range(81):
     vals.update({subj_str: s_vals})
 
 
+
 # Calculate Probability
 min_max_formant = 3000
 max_max_formant = 7000
@@ -58,20 +59,29 @@ ranges = {"pos": range(max_max_formant, 3500, -500),
 corrections = []
 formant_ranges = []
 
+for out_type in ["mix"]:
+    breakpoint()
+    out_type_path = os.path.join(fof_path, out_type)
+    csv_files = os.listdir(out_type_path)
+    csv_files = [file for file in csv_files if file.endswith('.csv')]
+    csv_files = [file for file in csv_files if not file.startswith('0m')]
+    out_type_df = pd.read_csv(os.path.join(out_type_path, "0mix_formant_outliers.csv"))
+    out_type_df = out_type_df.sort_values(by=['Subject', 'Vowel'])
+    dfs_list = [pd.read_csv(os.path.join(out_type_path, file)).set_index('Filename') for file in csv_files]
 
-for out_type in ["pos", "neg"]:
+    '''
     out_type_path = os.path.join(fof_path, out_type)
     out_type_df = pd.read_csv(os.path.join(out_type_path,
                                            "0{}_formant_outliers.csv".format(
                                                out_type)))
     out_type_df = out_type_df.sort_values(by=['Subject', 'Vowel'])
-    #po_out = pos_out[pos_out['Subject'].isin(['subj14'])]
 
     dfs_list = [pd.read_csv(os.path.join(out_type_path,
                                              "0{}_formant_outliers_{}.csv".format(out_type, x)
                                              )
                                 ).set_index('Filename')
                     for x in ranges[out_type]]
+    '''
     curr_subj = None
     curr_vowel = None
 
